@@ -4,15 +4,15 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    background-color: #f8f6f1;
-    color: #1a1a1a;
+    background-color: #ffffff;
+    color: #111111;
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; }
   ::-webkit-scrollbar { width: 3px; }
-  ::-webkit-scrollbar-track { background: #f8f6f1; }
+  ::-webkit-scrollbar-track { background: #ffffff; }
   ::-webkit-scrollbar-thumb { background: #c9a84c; }
   * { -webkit-tap-highlight-color: transparent; }
 }

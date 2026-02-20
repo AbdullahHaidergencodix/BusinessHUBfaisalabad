@@ -14,7 +14,7 @@ import Ticker from '../components/Ticker'
 ───────────────────────────────────────────────────── */
 const G = ({ children }) => (
   <span style={{
-    background: 'linear-gradient(135deg,#92650a,#c9a84c,#b8860b)',
+    background: 'linear-gradient(135deg,#7a4f08,#c9a84c,#b8860b)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
@@ -28,7 +28,7 @@ const SectionLabel = ({ children }) => (
     <div style={{ width:'28px', height:'1px', background:'#c9a84c', flexShrink:0 }} />
     <span style={{
       fontFamily:'Montserrat', fontSize:'9px',
-      letterSpacing:'0.45em', color:'#92650a',
+      letterSpacing:'0.45em', color:'#7a4f08',
       textTransform:'uppercase', fontWeight:600,
     }}>
       {children}
@@ -74,7 +74,7 @@ const fadeIn = (delay = 0) => ({
 const P = ({ children, style = {} }) => (
   <p style={{
     fontFamily:'Montserrat', fontSize:'13.5px',
-    color:'#3a3a3a', lineHeight:'2',
+    color:'#111111', lineHeight:'2',
     fontWeight:400, ...style,
   }}>
     {children}
@@ -166,7 +166,7 @@ function Hero() {
       {/* stronger left fade for text */}
       <div style={{ position:'absolute', inset:0, background:'linear-gradient(105deg,rgba(0,0,0,0.80) 0%,rgba(0,0,0,0.25) 60%,transparent 100%)', zIndex:4 }} />
       {/* bottom fade to page bg */}
-      <div style={{ position:'absolute', bottom:0, left:0, right:0, height:'200px', background:'linear-gradient(to top,#f8f6f1,transparent)', zIndex:4 }} />
+      <div style={{ position:'absolute', bottom:0, left:0, right:0, height:'200px', background:'linear-gradient(to top,#f4f4f4,transparent)', zIndex:4 }} />
       {/* top fade for navbar */}
       <div style={{ position:'absolute', top:0, left:0, right:0, height:'160px', background:'linear-gradient(to bottom,rgba(0,0,0,0.55),transparent)', zIndex:4 }} />
 
@@ -197,7 +197,7 @@ function Hero() {
             <span style={{ display:'block', fontSize:'clamp(48px,8.5vw,114px)', color:'#fff', textShadow:'0 2px 20px rgba(0,0,0,0.5)' }}>
               Sargodha Road's
             </span>
-            <span style={{ display:'block', fontSize:'clamp(48px,8.5vw,114px)', fontStyle:'italic', background:'linear-gradient(135deg,#f5d485,#c9a84c,#92650a)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
+            <span style={{ display:'block', fontSize:'clamp(48px,8.5vw,114px)', fontStyle:'italic', background:'linear-gradient(135deg,#f5d485,#c9a84c,#7a4f08)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
               New Identity.
             </span>
           </h1>
@@ -215,7 +215,7 @@ function Hero() {
           <div style={{ display:'flex', gap:'12px', flexWrap:'wrap' }}>
             <a href="#contact"
               style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'#c9a84c', color:'#fff', fontFamily:'Montserrat', fontSize:'clamp(9px,1vw,11px)', letterSpacing:'0.25em', fontWeight:700, padding:'clamp(13px,2vh,17px) clamp(24px,3.5vw,36px)', textDecoration:'none', transition:'background 0.3s', whiteSpace:'nowrap' }}
-              onMouseEnter={e => e.currentTarget.style.background='#92650a'}
+              onMouseEnter={e => e.currentTarget.style.background='#7a4f08'}
               onMouseLeave={e => e.currentTarget.style.background='#c9a84c'}
             >
               BOOK NOW <ChevronRight size={13} />
@@ -243,7 +243,7 @@ function Hero() {
       {/* progress */}
       <div style={{ position:'absolute', bottom:0, left:0, right:0, height:'2px', background:'rgba(201,168,76,0.12)', zIndex:10 }}>
         <motion.div key={cur}
-          style={{ height:'100%', background:'linear-gradient(to right,#92650a,#c9a84c,#f5d485)', transformOrigin:'left' }}
+          style={{ height:'100%', background:'linear-gradient(to right,#7a4f08,#c9a84c,#f5d485)', transformOrigin:'left' }}
           initial={{ scaleX:0 }} animate={{ scaleX:1 }}
           transition={{ duration:7, ease:'linear' }}
         />
@@ -276,13 +276,13 @@ function Stats() {
           <motion.div key={s.label} {...slideUp(i*0.08)}
             style={{ padding:'clamp(28px,4vh,48px) 16px', textAlign:'center', borderRight: i<3 ? '1px solid rgba(0,0,0,0.06)' : 'none' }}
           >
-            <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(36px,4.5vw,58px)', fontWeight:700, lineHeight:1, color:'#92650a' }}>
+            <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(36px,4.5vw,58px)', fontWeight:700, lineHeight:1, color:'#7a4f08' }}>
               {typeof s.val === 'number'
                 ? <><Counter to={s.val} />{s.suffix}</>
                 : s.val
               }
             </p>
-            <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.28em', color:'#888', marginTop:'8px', textTransform:'uppercase', fontWeight:600 }}>
+            <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.28em', color:'#444444', marginTop:'8px', textTransform:'uppercase', fontWeight:600 }}>
               {s.label}
             </p>
           </motion.div>
@@ -310,7 +310,7 @@ function About() {
   ]
   return (
     <section id="about" ref={ref}
-      style={{ background:'#f8f6f1', padding:'clamp(80px,11vh,130px) 0', overflow:'hidden' }}>
+      style={{ background:'#f4f4f4', padding:'clamp(80px,11vh,130px) 0', overflow:'hidden' }}>
       <div style={{ maxWidth:'1300px', margin:'0 auto', padding:'0 clamp(24px,4vw,52px)', display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(300px,1fr))', gap:'clamp(48px,7vw,96px)', alignItems:'center' }}>
 
         {/* image slides in from left */}
@@ -351,7 +351,7 @@ function About() {
                 style={{ display:'flex', alignItems:'flex-start', gap:'11px' }}
               >
                 <CheckCircle size={15} style={{ color:'#c9a84c', flexShrink:0, marginTop:'3px' }} />
-                <span style={{ fontFamily:'Montserrat', fontSize:'13px', color:'#3a3a3a', lineHeight:'1.75', fontWeight:400 }}>{b}</span>
+                <span style={{ fontFamily:'Montserrat', fontSize:'13px', color:'#111111', lineHeight:'1.75', fontWeight:400 }}>{b}</span>
               </motion.div>
             ))}
           </div>
@@ -403,11 +403,11 @@ function Features() {
               <span style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(28px,3.5vw,44px)', fontWeight:300, color:'rgba(201,168,76,0.3)', lineHeight:1 }}>
                 {f.n}
               </span>
-              <h3 style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(20px,2.2vw,30px)', color:'#2a2a2a', fontWeight:600, transition:'color 0.3s' }}
+              <h3 style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(20px,2.2vw,30px)', color:'#111111', fontWeight:600, transition:'color 0.3s' }}
                 className="group-hover:!text-amber-800">
                 {f.title}
               </h3>
-              <P style={{ fontSize:'12.5px', color:'#555' }}>{f.desc}</P>
+              <P style={{ fontSize:'12.5px', color:'#222222' }}>{f.desc}</P>
             </motion.div>
           ))}
         </div>
@@ -435,7 +435,7 @@ function WhySargodhRoad() {
     'Anchor tenants & national brands moving in',
   ]
   return (
-    <section style={{ background:'#f8f6f1', padding:'clamp(80px,11vh,130px) 0' }}>
+    <section style={{ background:'#f4f4f4', padding:'clamp(80px,11vh,130px) 0' }}>
       <div style={{ maxWidth:'1300px', margin:'0 auto', padding:'0 clamp(24px,4vw,52px)' }}>
 
         <motion.div {...slideUp()} style={{ textAlign:'center', marginBottom:'clamp(52px,8vh,88px)' }}>
@@ -460,10 +460,10 @@ function WhySargodhRoad() {
               style={{ background:'#fff', padding:'clamp(28px,4vh,44px) clamp(20px,3vw,36px)', boxShadow:'0 4px 28px rgba(0,0,0,0.07)', border:'1px solid rgba(0,0,0,0.05)', transition:'transform 0.3s, box-shadow 0.3s' }}
               className="hover:-translate-y-2 hover:shadow-xl"
             >
-              <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(42px,5.5vw,64px)', fontWeight:700, lineHeight:1, color:'#92650a', marginBottom:'10px' }}>
+              <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(42px,5.5vw,64px)', fontWeight:700, lineHeight:1, color:'#7a4f08', marginBottom:'10px' }}>
                 <Counter to={s.val} />{s.suffix}
               </p>
-              <p style={{ fontFamily:'Montserrat', fontSize:'12.5px', color:'#555', lineHeight:'1.7', fontWeight:400 }}>
+              <p style={{ fontFamily:'Montserrat', fontSize:'12.5px', color:'#222222', lineHeight:'1.7', fontWeight:400 }}>
                 {s.label}
               </p>
             </motion.div>
@@ -482,7 +482,7 @@ function WhySargodhRoad() {
               className="hover:border-amber-300 hover:shadow-md hover:-translate-y-1"
             >
               <CheckCircle size={15} style={{ color:'#c9a84c', flexShrink:0, marginTop:'3px' }} />
-              <span style={{ fontFamily:'Montserrat', fontSize:'13px', color:'#3a3a3a', lineHeight:'1.7', fontWeight:400 }}>{r}</span>
+              <span style={{ fontFamily:'Montserrat', fontSize:'13px', color:'#111111', lineHeight:'1.7', fontWeight:400 }}>{r}</span>
             </motion.div>
           ))}
         </div>
@@ -523,7 +523,7 @@ function PaymentPlan() {
               whileInView={{ opacity:1, y:0, scale:1 }}
               viewport={{ once:true, margin:'-50px' }}
               transition={{ duration:0.85, delay:i*0.1, ease:[0.22,1,0.36,1] }}
-              style={{ background:'#f8f6f1', border: p.tag==='Most Popular' ? '2px solid #c9a84c' : '1px solid rgba(0,0,0,0.08)', padding:'clamp(28px,3.5vw,44px) clamp(20px,2.5vw,32px)', position:'relative', boxShadow: p.tag==='Most Popular' ? '0 12px 48px rgba(201,168,76,0.15)' : '0 4px 20px rgba(0,0,0,0.05)', transition:'transform 0.3s, box-shadow 0.3s' }}
+              style={{ background:'#f4f4f4', border: p.tag==='Most Popular' ? '2px solid #c9a84c' : '1px solid rgba(0,0,0,0.08)', padding:'clamp(28px,3.5vw,44px) clamp(20px,2.5vw,32px)', position:'relative', boxShadow: p.tag==='Most Popular' ? '0 12px 48px rgba(201,168,76,0.15)' : '0 4px 20px rgba(0,0,0,0.05)', transition:'transform 0.3s, box-shadow 0.3s' }}
               className="hover:-translate-y-2 hover:shadow-2xl"
             >
               {p.tag && (
@@ -531,10 +531,10 @@ function PaymentPlan() {
                   {p.tag.toUpperCase()}
                 </div>
               )}
-              <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(30px,3.8vw,48px)', fontWeight:700, lineHeight:1, color:'#92650a', marginBottom:'4px', marginTop: p.tag ? '16px' : '0' }}>
+              <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(30px,3.8vw,48px)', fontWeight:700, lineHeight:1, color:'#7a4f08', marginBottom:'4px', marginTop: p.tag ? '16px' : '0' }}>
                 {p.size}
               </p>
-              <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.3em', color:'#999', marginBottom:'24px', textTransform:'uppercase', fontWeight:600 }}>
+              <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.3em', color:'#555555', marginBottom:'24px', textTransform:'uppercase', fontWeight:600 }}>
                 Commercial Unit
               </p>
               <div style={{ height:'1px', background:'rgba(0,0,0,0.08)', marginBottom:'20px' }} />
@@ -546,8 +546,8 @@ function PaymentPlan() {
                 { label:'Possession',        val:'On Request',        gold:false },
               ].map(row => (
                 <div key={row.label} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'9px 0', borderBottom:'1px solid rgba(0,0,0,0.05)' }}>
-                  <span style={{ fontFamily:'Montserrat', fontSize:'11px', color:'#888', fontWeight:400 }}>{row.label}</span>
-                  <span style={{ fontFamily:'Montserrat', fontSize:'12px', fontWeight:700, color: row.gold ? '#92650a' : '#1a1a1a' }}>{row.val}</span>
+                  <span style={{ fontFamily:'Montserrat', fontSize:'11px', color:'#444444', fontWeight:400 }}>{row.label}</span>
+                  <span style={{ fontFamily:'Montserrat', fontSize:'12px', fontWeight:700, color: row.gold ? '#7a4f08' : '#1a1a1a' }}>{row.val}</span>
                 </div>
               ))}
               <a href="tel:03111786243"
@@ -561,7 +561,7 @@ function PaymentPlan() {
           ))}
         </div>
 
-        <motion.p {...fadeIn(0.3)} style={{ fontFamily:'Montserrat', fontSize:'11.5px', color:'#999', textAlign:'center', marginTop:'24px', lineHeight:'1.8', fontWeight:400 }}>
+        <motion.p {...fadeIn(0.3)} style={{ fontFamily:'Montserrat', fontSize:'11.5px', color:'#555555', textAlign:'center', marginTop:'24px', lineHeight:'1.8', fontWeight:400 }}>
           * Prices based on 22,000 PKR/sq.ft starting rate. 24-month installment plan. Contact us for custom unit sizes.
         </motion.p>
       </div>
@@ -589,7 +589,7 @@ function Gallery() {
   }, [])
 
   return (
-    <section id="gallery" style={{ background:'#f8f6f1', padding:'clamp(80px,11vh,130px) 0' }}>
+    <section id="gallery" style={{ background:'#f4f4f4', padding:'clamp(80px,11vh,130px) 0' }}>
       <div style={{ maxWidth:'1300px', margin:'0 auto', padding:'0 clamp(24px,4vw,52px)' }}>
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:'clamp(32px,5vh,56px)', flexWrap:'wrap', gap:'16px' }}>
           <motion.div {...slideLeft()}>
@@ -598,7 +598,7 @@ function Gallery() {
               The <span style={{ fontStyle:'italic' }}><G>Vision</G></span>
             </h2>
           </motion.div>
-          <motion.span {...slideRight(0.1)} style={{ fontFamily:'Montserrat', fontSize:'10px', letterSpacing:'0.25em', color:'#aaa', textTransform:'uppercase' }}>
+          <motion.span {...slideRight(0.1)} style={{ fontFamily:'Montserrat', fontSize:'10px', letterSpacing:'0.25em', color:'#666666', textTransform:'uppercase' }}>
             Tap to enlarge
           </motion.span>
         </div>
@@ -716,12 +716,12 @@ function Chairman() {
           <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:300, color:'#1a1a1a', lineHeight:1.1, fontSize:'clamp(32px,4.2vw,56px)' }}>
             Ch. Abdul Rehman
           </h2>
-          <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.3em', color:'#92650a', margin:'8px 0 28px', textTransform:'uppercase', fontWeight:600 }}>
+          <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.3em', color:'#7a4f08', margin:'8px 0 28px', textTransform:'uppercase', fontWeight:600 }}>
             Chairman — Fatir Developers Pvt. Ltd.
           </p>
           <div style={{ borderLeft:'3px solid rgba(201,168,76,0.4)', paddingLeft:'22px', marginBottom:'24px' }}>
             <Quote size={20} style={{ color:'rgba(201,168,76,0.35)', marginBottom:'12px' }} />
-            <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(17px,2vw,23px)', color:'#2a2a2a', lineHeight:'1.85', fontStyle:'italic', fontWeight:400 }}>
+            <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(17px,2vw,23px)', color:'#111111', lineHeight:'1.85', fontStyle:'italic', fontWeight:400 }}>
               "Business Hub Faisalabad is not merely a commercial project — it is our commitment to transforming Sargodha Road into a world-class business destination that delivers lasting value, prestige, and prosperity for every investor."
             </p>
           </div>
@@ -756,7 +756,7 @@ function Location() {
     { dist:'20 min', label:'M-3 Motorway Interchange',      note:'National highway',  highlight:false },
   ]
   return (
-    <section id="location" style={{ background:'#f8f6f1', padding:'clamp(80px,11vh,130px) 0' }}>
+    <section id="location" style={{ background:'#f4f4f4', padding:'clamp(80px,11vh,130px) 0' }}>
       <div style={{ maxWidth:'1300px', margin:'0 auto', padding:'0 clamp(24px,4vw,52px)' }}>
         <motion.div {...slideUp()} style={{ textAlign:'center', marginBottom:'clamp(52px,8vh,80px)' }}>
           <SectionLabel>Location</SectionLabel>
@@ -782,7 +782,7 @@ function Location() {
               />
               <div style={{ position:'absolute', bottom:'12px', left:'12px', background:'rgba(248,246,241,0.97)', border:'1px solid rgba(201,168,76,0.3)', padding:'10px 16px', backdropFilter:'blur(8px)', boxShadow:'0 4px 20px rgba(0,0,0,0.1)' }}>
                 <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'15px', color:'#1a1a1a', fontWeight:500 }}>Business Hub</p>
-                <p style={{ fontFamily:'Montserrat', fontSize:'8px', letterSpacing:'0.25em', color:'#92650a', marginTop:'2px', fontWeight:600 }}>SARGODHA ROAD · FAISALABAD</p>
+                <p style={{ fontFamily:'Montserrat', fontSize:'8px', letterSpacing:'0.25em', color:'#7a4f08', marginTop:'2px', fontWeight:600 }}>SARGODHA ROAD · FAISALABAD</p>
               </div>
             </div>
             <a href="https://maps.google.com/?q=Sargodha+Road+Faisalabad" target="_blank" rel="noreferrer"
@@ -795,7 +795,7 @@ function Location() {
           </motion.div>
 
           <motion.div {...slideRight(0.15)}>
-            <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.4em', color:'#92650a', marginBottom:'20px', textTransform:'uppercase', fontWeight:600 }}>Distance Guide</p>
+            <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.4em', color:'#7a4f08', marginBottom:'20px', textTransform:'uppercase', fontWeight:600 }}>Distance Guide</p>
             <div style={{ background:'#fff', border:'1px solid rgba(0,0,0,0.07)', boxShadow:'0 4px 24px rgba(0,0,0,0.06)' }}>
               {landmarks.map((l,i) => (
                 <motion.div key={l.label}
@@ -805,7 +805,7 @@ function Location() {
                   className={l.highlight ? '' : 'hover:bg-amber-50/50'}
                 >
                   <div style={{ width:'48px', flexShrink:0 }}>
-                    <span style={{ fontFamily:'Montserrat', fontSize:'11px', fontWeight:700, color: l.highlight ? '#92650a' : '#bbb' }}>
+                    <span style={{ fontFamily:'Montserrat', fontSize:'11px', fontWeight:700, color: l.highlight ? '#7a4f08' : '#bbb' }}>
                       {l.dist}
                     </span>
                   </div>
@@ -813,7 +813,7 @@ function Location() {
                     <p style={{ fontFamily:'Montserrat', fontSize:'13px', color: l.highlight ? '#1a1a1a' : '#444', fontWeight: l.highlight ? 700 : 400 }}>
                       {l.label}
                     </p>
-                    <p style={{ fontFamily:'Montserrat', fontSize:'10px', color: l.highlight ? '#92650a' : '#bbb', marginTop:'1px', fontWeight: l.highlight ? 600 : 400 }}>
+                    <p style={{ fontFamily:'Montserrat', fontSize:'10px', color: l.highlight ? '#7a4f08' : '#bbb', marginTop:'1px', fontWeight: l.highlight ? 600 : 400 }}>
                       {l.note}
                     </p>
                   </div>
@@ -852,13 +852,13 @@ function CTABanner() {
             <G>Now Open</G>
           </h2>
           <GoldLine />
-          <P style={{ maxWidth:'400px', margin:'0 auto 44px', textAlign:'center', color:'#888' }}>
+          <P style={{ maxWidth:'400px', margin:'0 auto 44px', textAlign:'center', color:'#444444' }}>
             Secure your commercial space at Faisalabad's most prestigious address. 10% booking — 24-month easy installments.
           </P>
           <div style={{ display:'flex', gap:'12px', justifyContent:'center', flexWrap:'wrap' }}>
             <a href="tel:03111786243"
               style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'#c9a84c', color:'#fff', fontFamily:'Montserrat', fontSize:'11px', letterSpacing:'0.25em', fontWeight:700, padding:'clamp(14px,2vh,18px) clamp(30px,4vw,48px)', textDecoration:'none', transition:'background 0.3s' }}
-              onMouseEnter={e => e.currentTarget.style.background='#92650a'}
+              onMouseEnter={e => e.currentTarget.style.background='#7a4f08'}
               onMouseLeave={e => e.currentTarget.style.background='#c9a84c'}
             >
               <Phone size={14} /> CALL NOW
@@ -904,14 +904,14 @@ function Contact() {
             <motion.div key={item.label}
               initial={{ opacity:0, y:40 }} whileInView={{ opacity:1, y:0 }}
               viewport={{ once:true }} transition={{ duration:0.8, delay:i*0.1, ease:[0.22,1,0.36,1] }}
-              style={{ background:'#f8f6f1', padding:'clamp(32px,5vh,52px) clamp(20px,3vw,36px)', textAlign:'center', border:'1px solid rgba(0,0,0,0.07)', boxShadow:'0 4px 24px rgba(0,0,0,0.05)', transition:'all 0.3s' }}
+              style={{ background:'#f4f4f4', padding:'clamp(32px,5vh,52px) clamp(20px,3vw,36px)', textAlign:'center', border:'1px solid rgba(0,0,0,0.07)', boxShadow:'0 4px 24px rgba(0,0,0,0.05)', transition:'all 0.3s' }}
               className="hover:shadow-xl hover:-translate-y-2"
             >
               <div style={{ width:'52px', height:'52px', border:'1px solid rgba(201,168,76,0.3)', display:'flex', alignItems:'center', justifyContent:'center', margin:'0 auto 20px', transition:'all 0.3s' }}
                 className="group-hover:bg-amber-50">
                 <item.icon size={18} style={{ color:'#c9a84c' }} />
               </div>
-              <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.38em', color:'#999', marginBottom:'10px', textTransform:'uppercase', fontWeight:600 }}>
+              <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.38em', color:'#555555', marginBottom:'10px', textTransform:'uppercase', fontWeight:600 }}>
                 {item.label}
               </p>
               {item.href

@@ -31,7 +31,7 @@ export default function Navbar() {
         position:     'fixed',
         top: 0, left: 0, right: 0,
         zIndex:       100,
-        background:   scrolled ? 'rgba(250,250,250,0.97)' : 'transparent',
+        background:   scrolled ? 'rgba(255,255,255,0.97)' : 'transparent',
         backdropFilter: scrolled ? 'blur(20px)' : 'none',
         borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : '1px solid transparent',
         padding:      scrolled ? '14px 32px' : '22px 32px',
@@ -89,7 +89,7 @@ export default function Navbar() {
             initial={{ opacity:0, height:0 }}
             animate={{ opacity:1, height:'auto' }}
             exit={{   opacity:0, height:0 }}
-            style={{ overflow:'hidden', background:'rgba(250,250,250,0.99)', borderTop:'1px solid rgba(0,0,0,0.06)', marginTop:'14px' }}
+            style={{ overflow:'hidden', background:'rgba(255,255,255,0.99)', borderTop:'1px solid rgba(0,0,0,0.06)', marginTop:'14px' }}
           >
             <div style={{ padding:'24px 32px', display:'flex', flexDirection:'column', gap:'20px' }}>
               {links.map(l => (
