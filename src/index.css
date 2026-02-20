@@ -7,10 +7,18 @@
     background-color: #ffffff;
     color: #111111;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
-  h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+  }
+  p, span, a, li {
+    font-weight: 500;
+  }
   ::-webkit-scrollbar { width: 3px; }
   ::-webkit-scrollbar-track { background: #ffffff; }
   ::-webkit-scrollbar-thumb { background: #c9a84c; }

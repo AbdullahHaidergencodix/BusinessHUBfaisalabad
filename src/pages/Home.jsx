@@ -73,9 +73,9 @@ const fadeIn = (delay = 0) => ({
 /* strong readable body text */
 const P = ({ children, style = {} }) => (
   <p style={{
-    fontFamily:'Montserrat', fontSize:'13.5px',
+    fontFamily:'Montserrat', fontSize:'14px',
     color:'#111111', lineHeight:'2',
-    fontWeight:400, ...style,
+    fontWeight:500, ...style,
   }}>
     {children}
   </p>
@@ -193,7 +193,7 @@ function Hero() {
           </div>
 
           {/* headline */}
-          <h1 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:300, lineHeight:0.9, marginBottom:'clamp(16px,3vh,28px)', maxWidth:'clamp(300px,62vw,720px)' }}>
+          <h1 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:0.9, marginBottom:'clamp(16px,3vh,28px)', maxWidth:'clamp(300px,62vw,720px)' }}>
             <span style={{ display:'block', fontSize:'clamp(48px,8.5vw,114px)', color:'#fff', textShadow:'0 2px 20px rgba(0,0,0,0.5)' }}>
               Sargodha Road's
             </span>
@@ -330,7 +330,7 @@ function About() {
         {/* text slides in from right */}
         <motion.div {...slideRight(0.1)}>
           <SectionLabel>About The Project</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:300, lineHeight:1.05, color:'#1a1a1a', fontSize:'clamp(36px,4.2vw,60px)' }}>
+          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1.05, color:'#1a1a1a', fontSize:'clamp(36px,4.2vw,60px)' }}>
             A New Era of
           </h2>
           <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:700, fontStyle:'italic', lineHeight:1.05, fontSize:'clamp(36px,4.2vw,60px)', marginBottom:'6px' }}>
@@ -351,7 +351,7 @@ function About() {
                 style={{ display:'flex', alignItems:'flex-start', gap:'11px' }}
               >
                 <CheckCircle size={15} style={{ color:'#c9a84c', flexShrink:0, marginTop:'3px' }} />
-                <span style={{ fontFamily:'Montserrat', fontSize:'13px', color:'#111111', lineHeight:'1.75', fontWeight:400 }}>{b}</span>
+                <span style={{ fontFamily:'Montserrat', fontSize:'13px', color:'#111111', lineHeight:'1.75', fontWeight:500 }}>{b}</span>
               </motion.div>
             ))}
           </div>
@@ -381,7 +381,7 @@ function Features() {
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))', gap:'40px', alignItems:'end', marginBottom:'clamp(48px,7vh,80px)' }}>
           <motion.div {...slideLeft()}>
             <SectionLabel>Why Invest</SectionLabel>
-            <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:300, lineHeight:0.95, color:'#1a1a1a', fontSize:'clamp(42px,5.5vw,74px)' }}>
+            <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:0.95, color:'#1a1a1a', fontSize:'clamp(42px,5.5vw,74px)' }}>
               Built for<br /><span style={{ fontStyle:'italic' }}><G>Success</G></span>
             </h2>
           </motion.div>
@@ -400,7 +400,7 @@ function Features() {
               style={{ borderBottom:'1px solid rgba(0,0,0,0.06)', display:'grid', gridTemplateColumns:'clamp(44px,5vw,80px) 1fr 1fr', gap:'clamp(16px,3vw,44px)', alignItems:'center', padding:'clamp(22px,3vw,38px) 0', transition:'background 0.3s', cursor:'default' }}
               className="group hover:bg-amber-50/60"
             >
-              <span style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(28px,3.5vw,44px)', fontWeight:300, color:'rgba(201,168,76,0.3)', lineHeight:1 }}>
+              <span style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(28px,3.5vw,44px)', fontWeight:500, color:'rgba(201,168,76,0.3)', lineHeight:1 }}>
                 {f.n}
               </span>
               <h3 style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(20px,2.2vw,30px)', color:'#111111', fontWeight:600, transition:'color 0.3s' }}
@@ -440,7 +440,7 @@ function WhySargodhRoad() {
 
         <motion.div {...slideUp()} style={{ textAlign:'center', marginBottom:'clamp(52px,8vh,88px)' }}>
           <SectionLabel>Location Intelligence</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:300, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
+          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
             Why <span style={{ fontStyle:'italic' }}><G>Sargodha Road?</G></span>
           </h2>
           <GoldLine />
@@ -463,7 +463,7 @@ function WhySargodhRoad() {
               <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(42px,5.5vw,64px)', fontWeight:700, lineHeight:1, color:'#7a4f08', marginBottom:'10px' }}>
                 <Counter to={s.val} />{s.suffix}
               </p>
-              <p style={{ fontFamily:'Montserrat', fontSize:'12.5px', color:'#222222', lineHeight:'1.7', fontWeight:400 }}>
+              <p style={{ fontFamily:'Montserrat', fontSize:'12.5px', color:'#222222', lineHeight:'1.7', fontWeight:500 }}>
                 {s.label}
               </p>
             </motion.div>
@@ -482,7 +482,7 @@ function WhySargodhRoad() {
               className="hover:border-amber-300 hover:shadow-md hover:-translate-y-1"
             >
               <CheckCircle size={15} style={{ color:'#c9a84c', flexShrink:0, marginTop:'3px' }} />
-              <span style={{ fontFamily:'Montserrat', fontSize:'13px', color:'#111111', lineHeight:'1.7', fontWeight:400 }}>{r}</span>
+              <span style={{ fontFamily:'Montserrat', fontSize:'13px', color:'#111111', lineHeight:'1.7', fontWeight:500 }}>{r}</span>
             </motion.div>
           ))}
         </div>
@@ -507,7 +507,7 @@ function PaymentPlan() {
 
         <motion.div {...slideUp()} style={{ textAlign:'center', marginBottom:'clamp(52px,8vh,80px)' }}>
           <SectionLabel>Investment Plans</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:300, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
+          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
             Payment <span style={{ fontStyle:'italic' }}><G>Breakdown</G></span>
           </h2>
           <GoldLine />
@@ -546,7 +546,7 @@ function PaymentPlan() {
                 { label:'Possession',        val:'On Request',        gold:false },
               ].map(row => (
                 <div key={row.label} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'9px 0', borderBottom:'1px solid rgba(0,0,0,0.05)' }}>
-                  <span style={{ fontFamily:'Montserrat', fontSize:'11px', color:'#444444', fontWeight:400 }}>{row.label}</span>
+                  <span style={{ fontFamily:'Montserrat', fontSize:'11px', color:'#444444', fontWeight:500 }}>{row.label}</span>
                   <span style={{ fontFamily:'Montserrat', fontSize:'12px', fontWeight:700, color: row.gold ? '#7a4f08' : '#1a1a1a' }}>{row.val}</span>
                 </div>
               ))}
@@ -561,7 +561,7 @@ function PaymentPlan() {
           ))}
         </div>
 
-        <motion.p {...fadeIn(0.3)} style={{ fontFamily:'Montserrat', fontSize:'11.5px', color:'#555555', textAlign:'center', marginTop:'24px', lineHeight:'1.8', fontWeight:400 }}>
+        <motion.p {...fadeIn(0.3)} style={{ fontFamily:'Montserrat', fontSize:'11.5px', color:'#555555', textAlign:'center', marginTop:'24px', lineHeight:'1.8', fontWeight:500 }}>
           * Prices based on 22,000 PKR/sq.ft starting rate. 24-month installment plan. Contact us for custom unit sizes.
         </motion.p>
       </div>
@@ -594,7 +594,7 @@ function Gallery() {
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:'clamp(32px,5vh,56px)', flexWrap:'wrap', gap:'16px' }}>
           <motion.div {...slideLeft()}>
             <SectionLabel>Gallery</SectionLabel>
-            <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:300, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
+            <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
               The <span style={{ fontStyle:'italic' }}><G>Vision</G></span>
             </h2>
           </motion.div>
@@ -713,7 +713,7 @@ function Chairman() {
           style={{ display:'flex', flexDirection:'column', justifyContent:'center', padding:'clamp(48px,7vh,96px) clamp(28px,5.5vw,80px)' }}
         >
           <SectionLabel>A Message From</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:300, color:'#1a1a1a', lineHeight:1.1, fontSize:'clamp(32px,4.2vw,56px)' }}>
+          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, color:'#1a1a1a', lineHeight:1.1, fontSize:'clamp(32px,4.2vw,56px)' }}>
             Ch. Abdul Rehman
           </h2>
           <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.3em', color:'#7a4f08', margin:'8px 0 28px', textTransform:'uppercase', fontWeight:600 }}>
@@ -721,7 +721,7 @@ function Chairman() {
           </p>
           <div style={{ borderLeft:'3px solid rgba(201,168,76,0.4)', paddingLeft:'22px', marginBottom:'24px' }}>
             <Quote size={20} style={{ color:'rgba(201,168,76,0.35)', marginBottom:'12px' }} />
-            <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(17px,2vw,23px)', color:'#111111', lineHeight:'1.85', fontStyle:'italic', fontWeight:400 }}>
+            <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(17px,2vw,23px)', color:'#111111', lineHeight:'1.85', fontStyle:'italic', fontWeight:500 }}>
               "Business Hub Faisalabad is not merely a commercial project — it is our commitment to transforming Sargodha Road into a world-class business destination that delivers lasting value, prestige, and prosperity for every investor."
             </p>
           </div>
@@ -760,7 +760,7 @@ function Location() {
       <div style={{ maxWidth:'1300px', margin:'0 auto', padding:'0 clamp(24px,4vw,52px)' }}>
         <motion.div {...slideUp()} style={{ textAlign:'center', marginBottom:'clamp(52px,8vh,80px)' }}>
           <SectionLabel>Location</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:300, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
+          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
             Perfectly <span style={{ fontStyle:'italic' }}><G>Positioned</G></span>
           </h2>
           <GoldLine />
@@ -845,7 +845,7 @@ function CTABanner() {
       <div style={{ position:'relative', zIndex:5, maxWidth:'780px', margin:'0 auto', textAlign:'center' }}>
         <motion.div {...slideUp()}>
           <SectionLabel>Limited Availability</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:300, lineHeight:0.9, color:'#fff', fontSize:'clamp(44px,7.5vw,96px)' }}>
+          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:0.9, color:'#fff', fontSize:'clamp(44px,7.5vw,96px)' }}>
             Bookings Are
           </h2>
           <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:700, fontStyle:'italic', lineHeight:0.9, fontSize:'clamp(44px,7.5vw,96px)', marginBottom:'24px' }}>
@@ -886,7 +886,7 @@ function Contact() {
       <div style={{ maxWidth:'1300px', margin:'0 auto', padding:'0 clamp(24px,4vw,52px)' }}>
         <motion.div {...slideUp()} style={{ textAlign:'center', marginBottom:'clamp(52px,8vh,80px)' }}>
           <SectionLabel>Get In Touch</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:300, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
+          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
             Ready to <span style={{ fontStyle:'italic' }}><G>Invest?</G></span>
           </h2>
           <GoldLine />
