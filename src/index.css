@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #060606;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; }
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: #060606; }
+  ::-webkit-scrollbar-thumb { background: #9a7c3a; }
+
+  /* Mobile tap highlight */
+  * { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer utilities {
+  .gold-text {
+    background: linear-gradient(135deg, #f5d485 0%, #c9a84c 50%, #8a6020 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .section-pad { padding: 100px 0; }
+  @media (max-width: 768px) {
+    .section-pad { padding: 70px 0; }
+  }
+}
