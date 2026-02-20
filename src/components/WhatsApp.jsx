@@ -19,8 +19,8 @@ export default function WhatsApp() {
             exit={{   opacity:0, x:10, scale:0.95  }}
             style={{ background:'#fff', boxShadow:'0 8px 40px rgba(0,0,0,0.12)', padding:'10px 16px', whiteSpace:'nowrap', pointerEvents:'none' }}
           >
-            <p style={{ fontFamily:'Montserrat', fontSize:'11px', color:'#0a0a0a', fontWeight:600 }}>Chat on WhatsApp</p>
-            <p style={{ fontFamily:'Montserrat', fontSize:'10px', color:'#888', marginTop:'2px' }}>Usually replies instantly</p>
+            <p style={{ fontFamily:'Inter', fontSize:'11px', color:'#0a0a0a', fontWeight:600 }}>Chat on WhatsApp</p>
+            <p style={{ fontFamily:'Inter', fontSize:'10px', color:'#888', marginTop:'2px' }}>Usually replies instantly</p>
           </motion.div>
         )}
       </AnimatePresence>

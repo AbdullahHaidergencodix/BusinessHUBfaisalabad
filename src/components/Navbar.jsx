@@ -45,10 +45,10 @@ export default function Navbar() {
           <img src="/images/logo.jpg" alt="Business Hub Faisalabad"
             style={{ width:'36px', height:'36px', objectFit:'contain' }} />
           <div>
-            <p style={{ fontFamily:'Cormorant Garamond,serif', color:'#b8860b', fontSize:'16px', letterSpacing:'0.18em', fontWeight:600, lineHeight:1 }}>
+            <p style={{ fontFamily:'Playfair Display,serif', color:'#b8860b', fontSize:'16px', letterSpacing:'0.18em', fontWeight:600, lineHeight:1 }}>
               BUSINESS HUB
             </p>
-            <p style={{ fontFamily:'Montserrat', color:'#c9a84c', fontSize:'7px', letterSpacing:'0.5em' }}>
+            <p style={{ fontFamily:'Inter', color:'#c9a84c', fontSize:'7px', letterSpacing:'0.5em' }}>
               FAISALABAD
             </p>
           </div>
@@ -57,7 +57,7 @@ export default function Navbar() {
         <div style={{ display:'flex', alignItems:'center', gap:'32px' }} className="hidden md:flex">
           {links.map(l => (
             <a key={l.label} href={l.href}
-              style={{ fontFamily:'Montserrat', fontSize:'10px', letterSpacing:'0.2em', color:'#888', textDecoration:'none', transition:'color 0.3s', position:'relative', textTransform:'uppercase' }}
+              style={{ fontFamily:'Inter', fontSize:'10px', letterSpacing:'0.2em', color:'#888', textDecoration:'none', transition:'color 0.3s', position:'relative', textTransform:'uppercase' }}
               className="group hover:!text-amber-700"
             >
               {l.label}
@@ -68,7 +68,7 @@ export default function Navbar() {
         </div>
 
         <a href="tel:03111786243"
-          style={{ display:'none', alignItems:'center', gap:'8px', background:'#0a0a0a', color:'#fff', fontFamily:'Montserrat', fontSize:'10px', letterSpacing:'0.15em', padding:'11px 22px', textDecoration:'none', transition:'all 0.3s' }}
+          style={{ display:'none', alignItems:'center', gap:'8px', background:'#0a0a0a', color:'#fff', fontFamily:'Inter', fontSize:'10px', letterSpacing:'0.15em', padding:'11px 22px', textDecoration:'none', transition:'all 0.3s' }}
           className="md:!flex"
           onMouseEnter={e => { e.currentTarget.style.background = '#c9a84c' }}
           onMouseLeave={e => { e.currentTarget.style.background = '#0a0a0a' }}
@@ -94,13 +94,13 @@ export default function Navbar() {
             <div style={{ padding:'24px 32px', display:'flex', flexDirection:'column', gap:'20px' }}>
               {links.map(l => (
                 <a key={l.label} href={l.href} onClick={() => setOpen(false)}
-                  style={{ fontFamily:'Montserrat', fontSize:'11px', letterSpacing:'0.25em', color:'#888', textDecoration:'none', transition:'color 0.3s', textTransform:'uppercase' }}
+                  style={{ fontFamily:'Inter', fontSize:'11px', letterSpacing:'0.25em', color:'#888', textDecoration:'none', transition:'color 0.3s', textTransform:'uppercase' }}
                   className="hover:!text-amber-700">
                   {l.label}
                 </a>
               ))}
               <a href="tel:03111786243"
-                style={{ display:'flex', alignItems:'center', gap:'8px', color:'#b8860b', fontFamily:'Montserrat', fontSize:'13px', fontWeight:600, textDecoration:'none', paddingTop:'8px', borderTop:'1px solid rgba(0,0,0,0.06)' }}>
+                style={{ display:'flex', alignItems:'center', gap:'8px', color:'#b8860b', fontFamily:'Inter', fontSize:'13px', fontWeight:600, textDecoration:'none', paddingTop:'8px', borderTop:'1px solid rgba(0,0,0,0.06)' }}>
                 <Phone size={14} /> 03-111-786-243
               </a>
             </div>

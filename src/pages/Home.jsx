@@ -27,7 +27,7 @@ const SectionLabel = ({ children }) => (
   <div style={{ display:'flex', alignItems:'center', gap:'14px', marginBottom:'16px' }}>
     <div style={{ width:'28px', height:'1px', background:'#c9a84c', flexShrink:0 }} />
     <span style={{
-      fontFamily:'Montserrat', fontSize:'9px',
+      fontFamily:'Inter', fontSize:'9px',
       letterSpacing:'0.45em', color:'#7a4f08',
       textTransform:'uppercase', fontWeight:600,
     }}>
@@ -73,7 +73,7 @@ const fadeIn = (delay = 0) => ({
 /* strong readable body text */
 const P = ({ children, style = {} }) => (
   <p style={{
-    fontFamily:'Montserrat', fontSize:'14px',
+    fontFamily:'Inter', fontSize:'14px',
     color:'#111111', lineHeight:'2',
     fontWeight:500, ...style,
   }}>
@@ -187,13 +187,13 @@ function Hero() {
           {/* overline */}
           <div style={{ display:'flex', alignItems:'center', gap:'14px', marginBottom:'clamp(16px,3vh,28px)' }}>
             <div style={{ width:'36px', height:'1px', background:'#c9a84c' }} />
-            <span style={{ fontFamily:'Montserrat', fontSize:'clamp(8px,1vw,10px)', letterSpacing:'0.45em', color:'rgba(255,255,255,0.85)', fontWeight:500 }}>
+            <span style={{ fontFamily:'Inter', fontSize:'clamp(8px,1vw,10px)', letterSpacing:'0.45em', color:'rgba(255,255,255,0.85)', fontWeight:500 }}>
               FATIR DEVELOPERS · FAISALABAD
             </span>
           </div>
 
           {/* headline */}
-          <h1 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:0.9, marginBottom:'clamp(16px,3vh,28px)', maxWidth:'clamp(300px,62vw,720px)' }}>
+          <h1 style={{ fontFamily:'Playfair Display,serif', fontWeight:500, lineHeight:0.9, marginBottom:'clamp(16px,3vh,28px)', maxWidth:'clamp(300px,62vw,720px)' }}>
             <span style={{ display:'block', fontSize:'clamp(48px,8.5vw,114px)', color:'#fff', textShadow:'0 2px 20px rgba(0,0,0,0.5)' }}>
               Sargodha Road's
             </span>
@@ -205,7 +205,7 @@ function Hero() {
           {/* tags */}
           <div style={{ display:'flex', gap:'10px', flexWrap:'wrap', marginBottom:'clamp(24px,4vh,44px)' }}>
             {['TMA Approved','Drive-Thru Commercial','10% Booking'].map(t => (
-              <span key={t} style={{ fontFamily:'Montserrat', fontSize:'clamp(8px,0.9vw,10px)', letterSpacing:'0.18em', color:'#fff', border:'1px solid rgba(255,255,255,0.4)', padding:'7px 16px', background:'rgba(0,0,0,0.35)', backdropFilter:'blur(8px)', fontWeight:500 }}>
+              <span key={t} style={{ fontFamily:'Inter', fontSize:'clamp(8px,0.9vw,10px)', letterSpacing:'0.18em', color:'#fff', border:'1px solid rgba(255,255,255,0.4)', padding:'7px 16px', background:'rgba(0,0,0,0.35)', backdropFilter:'blur(8px)', fontWeight:500 }}>
                 {t}
               </span>
             ))}
@@ -214,14 +214,14 @@ function Hero() {
           {/* CTAs */}
           <div style={{ display:'flex', gap:'12px', flexWrap:'wrap' }}>
             <a href="#contact"
-              style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'#c9a84c', color:'#fff', fontFamily:'Montserrat', fontSize:'clamp(9px,1vw,11px)', letterSpacing:'0.25em', fontWeight:700, padding:'clamp(13px,2vh,17px) clamp(24px,3.5vw,36px)', textDecoration:'none', transition:'background 0.3s', whiteSpace:'nowrap' }}
+              style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'#c9a84c', color:'#fff', fontFamily:'Inter', fontSize:'clamp(9px,1vw,11px)', letterSpacing:'0.25em', fontWeight:700, padding:'clamp(13px,2vh,17px) clamp(24px,3.5vw,36px)', textDecoration:'none', transition:'background 0.3s', whiteSpace:'nowrap' }}
               onMouseEnter={e => e.currentTarget.style.background='#7a4f08'}
               onMouseLeave={e => e.currentTarget.style.background='#c9a84c'}
             >
               BOOK NOW <ChevronRight size={13} />
             </a>
             <a href="#about"
-              style={{ display:'inline-flex', alignItems:'center', gap:'10px', border:'1px solid rgba(255,255,255,0.45)', color:'#fff', fontFamily:'Montserrat', fontSize:'clamp(9px,1vw,11px)', letterSpacing:'0.25em', padding:'clamp(13px,2vh,17px) clamp(24px,3.5vw,36px)', textDecoration:'none', transition:'all 0.3s', background:'rgba(0,0,0,0.3)', backdropFilter:'blur(8px)', whiteSpace:'nowrap', fontWeight:500 }}
+              style={{ display:'inline-flex', alignItems:'center', gap:'10px', border:'1px solid rgba(255,255,255,0.45)', color:'#fff', fontFamily:'Inter', fontSize:'clamp(9px,1vw,11px)', letterSpacing:'0.25em', padding:'clamp(13px,2vh,17px) clamp(24px,3.5vw,36px)', textDecoration:'none', transition:'all 0.3s', background:'rgba(0,0,0,0.3)', backdropFilter:'blur(8px)', whiteSpace:'nowrap', fontWeight:500 }}
               onMouseEnter={e => { e.currentTarget.style.borderColor='#c9a84c'; e.currentTarget.style.color='#c9a84c' }}
               onMouseLeave={e => { e.currentTarget.style.borderColor='rgba(255,255,255,0.45)'; e.currentTarget.style.color='#fff' }}
             >
@@ -252,7 +252,7 @@ function Hero() {
       {/* scroll cue */}
       <motion.div animate={{ y:[0,8,0] }} transition={{ repeat:Infinity, duration:2.5 }}
         style={{ position:'absolute', bottom:'clamp(22px,4vh,38px)', right:'28px', zIndex:10, display:'flex', flexDirection:'column', alignItems:'center', gap:'6px', color:'rgba(255,255,255,0.4)' }}>
-        <span style={{ fontFamily:'Montserrat', fontSize:'8px', letterSpacing:'0.3em', writingMode:'vertical-rl' }}>SCROLL</span>
+        <span style={{ fontFamily:'Inter', fontSize:'8px', letterSpacing:'0.3em', writingMode:'vertical-rl' }}>SCROLL</span>
         <ArrowDown size={12} />
       </motion.div>
     </section>
@@ -276,13 +276,13 @@ function Stats() {
           <motion.div key={s.label} {...slideUp(i*0.08)}
             style={{ padding:'clamp(28px,4vh,48px) 16px', textAlign:'center', borderRight: i<3 ? '1px solid rgba(0,0,0,0.06)' : 'none' }}
           >
-            <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(36px,4.5vw,58px)', fontWeight:700, lineHeight:1, color:'#7a4f08' }}>
+            <p style={{ fontFamily:'Playfair Display,serif', fontSize:'clamp(36px,4.5vw,58px)', fontWeight:700, lineHeight:1, color:'#7a4f08' }}>
               {typeof s.val === 'number'
                 ? <><Counter to={s.val} />{s.suffix}</>
                 : s.val
               }
             </p>
-            <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.28em', color:'#444444', marginTop:'8px', textTransform:'uppercase', fontWeight:600 }}>
+            <p style={{ fontFamily:'Inter', fontSize:'9px', letterSpacing:'0.28em', color:'#444444', marginTop:'8px', textTransform:'uppercase', fontWeight:600 }}>
               {s.label}
             </p>
           </motion.div>
@@ -322,18 +322,18 @@ function About() {
           <div style={{ position:'absolute', top:'-14px', left:'-14px', width:'80px', height:'80px', borderTop:'2px solid rgba(201,168,76,0.5)', borderLeft:'2px solid rgba(201,168,76,0.5)', pointerEvents:'none' }} />
           <div style={{ position:'absolute', bottom:'-14px', right:'-14px', width:'80px', height:'80px', borderBottom:'2px solid rgba(201,168,76,0.5)', borderRight:'2px solid rgba(201,168,76,0.5)', pointerEvents:'none' }} />
           <div style={{ position:'absolute', bottom:'32px', left:'-20px', background:'#c9a84c', padding:'16px 22px', boxShadow:'0 8px 32px rgba(201,168,76,0.35)' }}>
-            <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'38px', fontWeight:700, color:'#fff', lineHeight:1 }}>2025</p>
-            <p style={{ fontFamily:'Montserrat', fontSize:'8px', letterSpacing:'0.3em', color:'rgba(255,255,255,0.85)', marginTop:'3px', fontWeight:600 }}>COMPLETION</p>
+            <p style={{ fontFamily:'Playfair Display,serif', fontSize:'38px', fontWeight:700, color:'#fff', lineHeight:1 }}>2025</p>
+            <p style={{ fontFamily:'Inter', fontSize:'8px', letterSpacing:'0.3em', color:'rgba(255,255,255,0.85)', marginTop:'3px', fontWeight:600 }}>COMPLETION</p>
           </div>
         </motion.div>
 
         {/* text slides in from right */}
         <motion.div {...slideRight(0.1)}>
           <SectionLabel>About The Project</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1.05, color:'#1a1a1a', fontSize:'clamp(36px,4.2vw,60px)' }}>
+          <h2 style={{ fontFamily:'Playfair Display,serif', fontWeight:500, lineHeight:1.05, color:'#1a1a1a', fontSize:'clamp(36px,4.2vw,60px)' }}>
             A New Era of
           </h2>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:700, fontStyle:'italic', lineHeight:1.05, fontSize:'clamp(36px,4.2vw,60px)', marginBottom:'6px' }}>
+          <h2 style={{ fontFamily:'Playfair Display,serif', fontWeight:700, fontStyle:'italic', lineHeight:1.05, fontSize:'clamp(36px,4.2vw,60px)', marginBottom:'6px' }}>
             <G>Commercial Excellence</G>
           </h2>
           <GoldLine />
@@ -351,7 +351,7 @@ function About() {
                 style={{ display:'flex', alignItems:'flex-start', gap:'11px' }}
               >
                 <CheckCircle size={15} style={{ color:'#c9a84c', flexShrink:0, marginTop:'3px' }} />
-                <span style={{ fontFamily:'Montserrat', fontSize:'13px', color:'#111111', lineHeight:'1.75', fontWeight:500 }}>{b}</span>
+                <span style={{ fontFamily:'Inter', fontSize:'13px', color:'#111111', lineHeight:'1.75', fontWeight:500 }}>{b}</span>
               </motion.div>
             ))}
           </div>
@@ -381,7 +381,7 @@ function Features() {
         <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))', gap:'40px', alignItems:'end', marginBottom:'clamp(48px,7vh,80px)' }}>
           <motion.div {...slideLeft()}>
             <SectionLabel>Why Invest</SectionLabel>
-            <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:0.95, color:'#1a1a1a', fontSize:'clamp(42px,5.5vw,74px)' }}>
+            <h2 style={{ fontFamily:'Playfair Display,serif', fontWeight:500, lineHeight:0.95, color:'#1a1a1a', fontSize:'clamp(42px,5.5vw,74px)' }}>
               Built for<br /><span style={{ fontStyle:'italic' }}><G>Success</G></span>
             </h2>
           </motion.div>
@@ -400,10 +400,10 @@ function Features() {
               style={{ borderBottom:'1px solid rgba(0,0,0,0.06)', display:'grid', gridTemplateColumns:'clamp(44px,5vw,80px) 1fr 1fr', gap:'clamp(16px,3vw,44px)', alignItems:'center', padding:'clamp(22px,3vw,38px) 0', transition:'background 0.3s', cursor:'default' }}
               className="group hover:bg-amber-50/60"
             >
-              <span style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(28px,3.5vw,44px)', fontWeight:500, color:'rgba(201,168,76,0.3)', lineHeight:1 }}>
+              <span style={{ fontFamily:'Playfair Display,serif', fontSize:'clamp(28px,3.5vw,44px)', fontWeight:500, color:'rgba(201,168,76,0.3)', lineHeight:1 }}>
                 {f.n}
               </span>
-              <h3 style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(20px,2.2vw,30px)', color:'#111111', fontWeight:600, transition:'color 0.3s' }}
+              <h3 style={{ fontFamily:'Playfair Display,serif', fontSize:'clamp(20px,2.2vw,30px)', color:'#111111', fontWeight:600, transition:'color 0.3s' }}
                 className="group-hover:!text-amber-800">
                 {f.title}
               </h3>
@@ -440,7 +440,7 @@ function WhySargodhRoad() {
 
         <motion.div {...slideUp()} style={{ textAlign:'center', marginBottom:'clamp(52px,8vh,88px)' }}>
           <SectionLabel>Location Intelligence</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
+          <h2 style={{ fontFamily:'Playfair Display,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
             Why <span style={{ fontStyle:'italic' }}><G>Sargodha Road?</G></span>
           </h2>
           <GoldLine />
@@ -460,10 +460,10 @@ function WhySargodhRoad() {
               style={{ background:'#fff', padding:'clamp(28px,4vh,44px) clamp(20px,3vw,36px)', boxShadow:'0 4px 28px rgba(0,0,0,0.07)', border:'1px solid rgba(0,0,0,0.05)', transition:'transform 0.3s, box-shadow 0.3s' }}
               className="hover:-translate-y-2 hover:shadow-xl"
             >
-              <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(42px,5.5vw,64px)', fontWeight:700, lineHeight:1, color:'#7a4f08', marginBottom:'10px' }}>
+              <p style={{ fontFamily:'Playfair Display,serif', fontSize:'clamp(42px,5.5vw,64px)', fontWeight:700, lineHeight:1, color:'#7a4f08', marginBottom:'10px' }}>
                 <Counter to={s.val} />{s.suffix}
               </p>
-              <p style={{ fontFamily:'Montserrat', fontSize:'12.5px', color:'#222222', lineHeight:'1.7', fontWeight:500 }}>
+              <p style={{ fontFamily:'Inter', fontSize:'12.5px', color:'#222222', lineHeight:'1.7', fontWeight:500 }}>
                 {s.label}
               </p>
             </motion.div>
@@ -482,7 +482,7 @@ function WhySargodhRoad() {
               className="hover:border-amber-300 hover:shadow-md hover:-translate-y-1"
             >
               <CheckCircle size={15} style={{ color:'#c9a84c', flexShrink:0, marginTop:'3px' }} />
-              <span style={{ fontFamily:'Montserrat', fontSize:'13px', color:'#111111', lineHeight:'1.7', fontWeight:500 }}>{r}</span>
+              <span style={{ fontFamily:'Inter', fontSize:'13px', color:'#111111', lineHeight:'1.7', fontWeight:500 }}>{r}</span>
             </motion.div>
           ))}
         </div>
@@ -507,7 +507,7 @@ function PaymentPlan() {
 
         <motion.div {...slideUp()} style={{ textAlign:'center', marginBottom:'clamp(52px,8vh,80px)' }}>
           <SectionLabel>Investment Plans</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
+          <h2 style={{ fontFamily:'Playfair Display,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
             Payment <span style={{ fontStyle:'italic' }}><G>Breakdown</G></span>
           </h2>
           <GoldLine />
@@ -527,14 +527,14 @@ function PaymentPlan() {
               className="hover:-translate-y-2 hover:shadow-2xl"
             >
               {p.tag && (
-                <div style={{ position:'absolute', top:'-1px', left:'50%', transform:'translateX(-50%)', background:'#c9a84c', color:'#fff', fontFamily:'Montserrat', fontSize:'8px', letterSpacing:'0.25em', fontWeight:700, padding:'5px 16px', whiteSpace:'nowrap' }}>
+                <div style={{ position:'absolute', top:'-1px', left:'50%', transform:'translateX(-50%)', background:'#c9a84c', color:'#fff', fontFamily:'Inter', fontSize:'8px', letterSpacing:'0.25em', fontWeight:700, padding:'5px 16px', whiteSpace:'nowrap' }}>
                   {p.tag.toUpperCase()}
                 </div>
               )}
-              <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(30px,3.8vw,48px)', fontWeight:700, lineHeight:1, color:'#7a4f08', marginBottom:'4px', marginTop: p.tag ? '16px' : '0' }}>
+              <p style={{ fontFamily:'Playfair Display,serif', fontSize:'clamp(30px,3.8vw,48px)', fontWeight:700, lineHeight:1, color:'#7a4f08', marginBottom:'4px', marginTop: p.tag ? '16px' : '0' }}>
                 {p.size}
               </p>
-              <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.3em', color:'#555555', marginBottom:'24px', textTransform:'uppercase', fontWeight:600 }}>
+              <p style={{ fontFamily:'Inter', fontSize:'9px', letterSpacing:'0.3em', color:'#555555', marginBottom:'24px', textTransform:'uppercase', fontWeight:600 }}>
                 Commercial Unit
               </p>
               <div style={{ height:'1px', background:'rgba(0,0,0,0.08)', marginBottom:'20px' }} />
@@ -546,12 +546,12 @@ function PaymentPlan() {
                 { label:'Possession',        val:'On Request',        gold:false },
               ].map(row => (
                 <div key={row.label} style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'9px 0', borderBottom:'1px solid rgba(0,0,0,0.05)' }}>
-                  <span style={{ fontFamily:'Montserrat', fontSize:'11px', color:'#444444', fontWeight:500 }}>{row.label}</span>
-                  <span style={{ fontFamily:'Montserrat', fontSize:'12px', fontWeight:700, color: row.gold ? '#7a4f08' : '#1a1a1a' }}>{row.val}</span>
+                  <span style={{ fontFamily:'Inter', fontSize:'11px', color:'#444444', fontWeight:500 }}>{row.label}</span>
+                  <span style={{ fontFamily:'Inter', fontSize:'12px', fontWeight:700, color: row.gold ? '#7a4f08' : '#1a1a1a' }}>{row.val}</span>
                 </div>
               ))}
               <a href="tel:03111786243"
-                style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'8px', marginTop:'24px', background:'#1a1a1a', color:'#fff', fontFamily:'Montserrat', fontSize:'10px', letterSpacing:'0.2em', padding:'13px', textDecoration:'none', transition:'all 0.3s', fontWeight:600 }}
+                style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'8px', marginTop:'24px', background:'#1a1a1a', color:'#fff', fontFamily:'Inter', fontSize:'10px', letterSpacing:'0.2em', padding:'13px', textDecoration:'none', transition:'all 0.3s', fontWeight:600 }}
                 onMouseEnter={e => e.currentTarget.style.background='#c9a84c'}
                 onMouseLeave={e => e.currentTarget.style.background='#1a1a1a'}
               >
@@ -561,7 +561,7 @@ function PaymentPlan() {
           ))}
         </div>
 
-        <motion.p {...fadeIn(0.3)} style={{ fontFamily:'Montserrat', fontSize:'11.5px', color:'#555555', textAlign:'center', marginTop:'24px', lineHeight:'1.8', fontWeight:500 }}>
+        <motion.p {...fadeIn(0.3)} style={{ fontFamily:'Inter', fontSize:'11.5px', color:'#555555', textAlign:'center', marginTop:'24px', lineHeight:'1.8', fontWeight:500 }}>
           * Prices based on 22,000 PKR/sq.ft starting rate. 24-month installment plan. Contact us for custom unit sizes.
         </motion.p>
       </div>
@@ -594,11 +594,11 @@ function Gallery() {
         <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-end', marginBottom:'clamp(32px,5vh,56px)', flexWrap:'wrap', gap:'16px' }}>
           <motion.div {...slideLeft()}>
             <SectionLabel>Gallery</SectionLabel>
-            <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
+            <h2 style={{ fontFamily:'Playfair Display,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
               The <span style={{ fontStyle:'italic' }}><G>Vision</G></span>
             </h2>
           </motion.div>
-          <motion.span {...slideRight(0.1)} style={{ fontFamily:'Montserrat', fontSize:'10px', letterSpacing:'0.25em', color:'#666666', textTransform:'uppercase' }}>
+          <motion.span {...slideRight(0.1)} style={{ fontFamily:'Inter', fontSize:'10px', letterSpacing:'0.25em', color:'#666666', textTransform:'uppercase' }}>
             Tap to enlarge
           </motion.span>
         </div>
@@ -663,12 +663,12 @@ function Gallery() {
               onClick={e => e.stopPropagation()}
             />
             <button onClick={() => setLb(null)}
-              style={{ position:'absolute', top:'20px', right:'24px', background:'none', border:'1px solid rgba(255,255,255,0.2)', color:'#fff', fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.3em', padding:'9px 18px', cursor:'pointer' }}>
+              style={{ position:'absolute', top:'20px', right:'24px', background:'none', border:'1px solid rgba(255,255,255,0.2)', color:'#fff', fontFamily:'Inter', fontSize:'9px', letterSpacing:'0.3em', padding:'9px 18px', cursor:'pointer' }}>
               CLOSE
             </button>
             <div style={{ position:'absolute', bottom:'24px', textAlign:'center', left:'50%', transform:'translateX(-50%)' }}>
-              <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'22px', color:'#fff' }}>{imgs[lb].cap}</p>
-              <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.35em', color:'#c9a84c', marginTop:'4px' }}>{imgs[lb].sub}</p>
+              <p style={{ fontFamily:'Playfair Display,serif', fontSize:'22px', color:'#fff' }}>{imgs[lb].cap}</p>
+              <p style={{ fontFamily:'Inter', fontSize:'9px', letterSpacing:'0.35em', color:'#c9a84c', marginTop:'4px' }}>{imgs[lb].sub}</p>
             </div>
           </motion.div>
         )}
@@ -686,8 +686,8 @@ function GalleryImg({ img }) {
       />
       <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top,rgba(0,0,0,0.65),transparent 50%)' }} />
       <div style={{ position:'absolute', bottom:'14px', left:'16px' }}>
-        <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(14px,1.6vw,21px)', color:'#fff', lineHeight:1.2, fontWeight:500 }}>{img.cap}</p>
-        <p style={{ fontFamily:'Montserrat', fontSize:'8px', letterSpacing:'0.28em', color:'#c9a84c', marginTop:'3px', fontWeight:600 }}>{img.sub}</p>
+        <p style={{ fontFamily:'Playfair Display,serif', fontSize:'clamp(14px,1.6vw,21px)', color:'#fff', lineHeight:1.2, fontWeight:500 }}>{img.cap}</p>
+        <p style={{ fontFamily:'Inter', fontSize:'8px', letterSpacing:'0.28em', color:'#c9a84c', marginTop:'3px', fontWeight:600 }}>{img.sub}</p>
       </div>
     </>
   )
@@ -713,15 +713,15 @@ function Chairman() {
           style={{ display:'flex', flexDirection:'column', justifyContent:'center', padding:'clamp(48px,7vh,96px) clamp(28px,5.5vw,80px)' }}
         >
           <SectionLabel>A Message From</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, color:'#1a1a1a', lineHeight:1.1, fontSize:'clamp(32px,4.2vw,56px)' }}>
+          <h2 style={{ fontFamily:'Playfair Display,serif', fontWeight:500, color:'#1a1a1a', lineHeight:1.1, fontSize:'clamp(32px,4.2vw,56px)' }}>
             Ch. Abdul Rehman
           </h2>
-          <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.3em', color:'#7a4f08', margin:'8px 0 28px', textTransform:'uppercase', fontWeight:600 }}>
+          <p style={{ fontFamily:'Inter', fontSize:'9px', letterSpacing:'0.3em', color:'#7a4f08', margin:'8px 0 28px', textTransform:'uppercase', fontWeight:600 }}>
             Chairman — Fatir Developers Pvt. Ltd.
           </p>
           <div style={{ borderLeft:'3px solid rgba(201,168,76,0.4)', paddingLeft:'22px', marginBottom:'24px' }}>
             <Quote size={20} style={{ color:'rgba(201,168,76,0.35)', marginBottom:'12px' }} />
-            <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(17px,2vw,23px)', color:'#111111', lineHeight:'1.85', fontStyle:'italic', fontWeight:500 }}>
+            <p style={{ fontFamily:'Playfair Display,serif', fontSize:'clamp(17px,2vw,23px)', color:'#111111', lineHeight:'1.85', fontStyle:'italic', fontWeight:500 }}>
               "Business Hub Faisalabad is not merely a commercial project — it is our commitment to transforming Sargodha Road into a world-class business destination that delivers lasting value, prestige, and prosperity for every investor."
             </p>
           </div>
@@ -729,7 +729,7 @@ function Chairman() {
             Under his leadership, Fatir Developers has become one of Faisalabad's most trusted development companies — committed to quality, transparency, and delivering on every promise.
           </P>
           <a href="tel:03111786243"
-            style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'#1a1a1a', color:'#fff', fontFamily:'Montserrat', fontSize:'10px', letterSpacing:'0.22em', padding:'14px 28px', textDecoration:'none', alignSelf:'flex-start', transition:'all 0.3s', fontWeight:600 }}
+            style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'#1a1a1a', color:'#fff', fontFamily:'Inter', fontSize:'10px', letterSpacing:'0.22em', padding:'14px 28px', textDecoration:'none', alignSelf:'flex-start', transition:'all 0.3s', fontWeight:600 }}
             onMouseEnter={e => e.currentTarget.style.background='#c9a84c'}
             onMouseLeave={e => e.currentTarget.style.background='#1a1a1a'}
           >
@@ -760,7 +760,7 @@ function Location() {
       <div style={{ maxWidth:'1300px', margin:'0 auto', padding:'0 clamp(24px,4vw,52px)' }}>
         <motion.div {...slideUp()} style={{ textAlign:'center', marginBottom:'clamp(52px,8vh,80px)' }}>
           <SectionLabel>Location</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
+          <h2 style={{ fontFamily:'Playfair Display,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
             Perfectly <span style={{ fontStyle:'italic' }}><G>Positioned</G></span>
           </h2>
           <GoldLine />
@@ -781,12 +781,12 @@ function Location() {
                 allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               />
               <div style={{ position:'absolute', bottom:'12px', left:'12px', background:'rgba(248,246,241,0.97)', border:'1px solid rgba(201,168,76,0.3)', padding:'10px 16px', backdropFilter:'blur(8px)', boxShadow:'0 4px 20px rgba(0,0,0,0.1)' }}>
-                <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'15px', color:'#1a1a1a', fontWeight:500 }}>Business Hub</p>
-                <p style={{ fontFamily:'Montserrat', fontSize:'8px', letterSpacing:'0.25em', color:'#7a4f08', marginTop:'2px', fontWeight:600 }}>SARGODHA ROAD · FAISALABAD</p>
+                <p style={{ fontFamily:'Playfair Display,serif', fontSize:'15px', color:'#1a1a1a', fontWeight:500 }}>Business Hub</p>
+                <p style={{ fontFamily:'Inter', fontSize:'8px', letterSpacing:'0.25em', color:'#7a4f08', marginTop:'2px', fontWeight:600 }}>SARGODHA ROAD · FAISALABAD</p>
               </div>
             </div>
             <a href="https://maps.google.com/?q=Sargodha+Road+Faisalabad" target="_blank" rel="noreferrer"
-              style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'8px', marginTop:'10px', background:'#1a1a1a', color:'#fff', fontFamily:'Montserrat', fontSize:'10px', letterSpacing:'0.2em', padding:'13px', textDecoration:'none', transition:'background 0.3s', fontWeight:600 }}
+              style={{ display:'flex', alignItems:'center', justifyContent:'center', gap:'8px', marginTop:'10px', background:'#1a1a1a', color:'#fff', fontFamily:'Inter', fontSize:'10px', letterSpacing:'0.2em', padding:'13px', textDecoration:'none', transition:'background 0.3s', fontWeight:600 }}
               onMouseEnter={e => e.currentTarget.style.background='#c9a84c'}
               onMouseLeave={e => e.currentTarget.style.background='#1a1a1a'}
             >
@@ -795,7 +795,7 @@ function Location() {
           </motion.div>
 
           <motion.div {...slideRight(0.15)}>
-            <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.4em', color:'#7a4f08', marginBottom:'20px', textTransform:'uppercase', fontWeight:600 }}>Distance Guide</p>
+            <p style={{ fontFamily:'Inter', fontSize:'9px', letterSpacing:'0.4em', color:'#7a4f08', marginBottom:'20px', textTransform:'uppercase', fontWeight:600 }}>Distance Guide</p>
             <div style={{ background:'#fff', border:'1px solid rgba(0,0,0,0.07)', boxShadow:'0 4px 24px rgba(0,0,0,0.06)' }}>
               {landmarks.map((l,i) => (
                 <motion.div key={l.label}
@@ -805,15 +805,15 @@ function Location() {
                   className={l.highlight ? '' : 'hover:bg-amber-50/50'}
                 >
                   <div style={{ width:'48px', flexShrink:0 }}>
-                    <span style={{ fontFamily:'Montserrat', fontSize:'11px', fontWeight:700, color: l.highlight ? '#7a4f08' : '#bbb' }}>
+                    <span style={{ fontFamily:'Inter', fontSize:'11px', fontWeight:700, color: l.highlight ? '#7a4f08' : '#bbb' }}>
                       {l.dist}
                     </span>
                   </div>
                   <div style={{ flex:1 }}>
-                    <p style={{ fontFamily:'Montserrat', fontSize:'13px', color: l.highlight ? '#1a1a1a' : '#444', fontWeight: l.highlight ? 700 : 400 }}>
+                    <p style={{ fontFamily:'Inter', fontSize:'13px', color: l.highlight ? '#1a1a1a' : '#444', fontWeight: l.highlight ? 700 : 400 }}>
                       {l.label}
                     </p>
-                    <p style={{ fontFamily:'Montserrat', fontSize:'10px', color: l.highlight ? '#7a4f08' : '#bbb', marginTop:'1px', fontWeight: l.highlight ? 600 : 400 }}>
+                    <p style={{ fontFamily:'Inter', fontSize:'10px', color: l.highlight ? '#7a4f08' : '#bbb', marginTop:'1px', fontWeight: l.highlight ? 600 : 400 }}>
                       {l.note}
                     </p>
                   </div>
@@ -845,10 +845,10 @@ function CTABanner() {
       <div style={{ position:'relative', zIndex:5, maxWidth:'780px', margin:'0 auto', textAlign:'center' }}>
         <motion.div {...slideUp()}>
           <SectionLabel>Limited Availability</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:0.9, color:'#fff', fontSize:'clamp(44px,7.5vw,96px)' }}>
+          <h2 style={{ fontFamily:'Playfair Display,serif', fontWeight:500, lineHeight:0.9, color:'#fff', fontSize:'clamp(44px,7.5vw,96px)' }}>
             Bookings Are
           </h2>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:700, fontStyle:'italic', lineHeight:0.9, fontSize:'clamp(44px,7.5vw,96px)', marginBottom:'24px' }}>
+          <h2 style={{ fontFamily:'Playfair Display,serif', fontWeight:700, fontStyle:'italic', lineHeight:0.9, fontSize:'clamp(44px,7.5vw,96px)', marginBottom:'24px' }}>
             <G>Now Open</G>
           </h2>
           <GoldLine />
@@ -857,14 +857,14 @@ function CTABanner() {
           </P>
           <div style={{ display:'flex', gap:'12px', justifyContent:'center', flexWrap:'wrap' }}>
             <a href="tel:03111786243"
-              style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'#c9a84c', color:'#fff', fontFamily:'Montserrat', fontSize:'11px', letterSpacing:'0.25em', fontWeight:700, padding:'clamp(14px,2vh,18px) clamp(30px,4vw,48px)', textDecoration:'none', transition:'background 0.3s' }}
+              style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'#c9a84c', color:'#fff', fontFamily:'Inter', fontSize:'11px', letterSpacing:'0.25em', fontWeight:700, padding:'clamp(14px,2vh,18px) clamp(30px,4vw,48px)', textDecoration:'none', transition:'background 0.3s' }}
               onMouseEnter={e => e.currentTarget.style.background='#7a4f08'}
               onMouseLeave={e => e.currentTarget.style.background='#c9a84c'}
             >
               <Phone size={14} /> CALL NOW
             </a>
             <a href="https://www.facebook.com/Businesshubfaisalabad/" target="_blank" rel="noreferrer"
-              style={{ display:'inline-flex', alignItems:'center', gap:'10px', border:'1px solid rgba(255,255,255,0.2)', color:'#fff', fontFamily:'Montserrat', fontSize:'11px', letterSpacing:'0.25em', padding:'clamp(14px,2vh,18px) clamp(30px,4vw,48px)', textDecoration:'none', transition:'all 0.3s', fontWeight:500 }}
+              style={{ display:'inline-flex', alignItems:'center', gap:'10px', border:'1px solid rgba(255,255,255,0.2)', color:'#fff', fontFamily:'Inter', fontSize:'11px', letterSpacing:'0.25em', padding:'clamp(14px,2vh,18px) clamp(30px,4vw,48px)', textDecoration:'none', transition:'all 0.3s', fontWeight:500 }}
               onMouseEnter={e => e.currentTarget.style.borderColor='#c9a84c'}
               onMouseLeave={e => e.currentTarget.style.borderColor='rgba(255,255,255,0.2)'}
             >
@@ -886,7 +886,7 @@ function Contact() {
       <div style={{ maxWidth:'1300px', margin:'0 auto', padding:'0 clamp(24px,4vw,52px)' }}>
         <motion.div {...slideUp()} style={{ textAlign:'center', marginBottom:'clamp(52px,8vh,80px)' }}>
           <SectionLabel>Get In Touch</SectionLabel>
-          <h2 style={{ fontFamily:'Cormorant Garamond,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
+          <h2 style={{ fontFamily:'Playfair Display,serif', fontWeight:500, lineHeight:1, color:'#1a1a1a', fontSize:'clamp(38px,5.5vw,72px)' }}>
             Ready to <span style={{ fontStyle:'italic' }}><G>Invest?</G></span>
           </h2>
           <GoldLine />
@@ -911,16 +911,16 @@ function Contact() {
                 className="group-hover:bg-amber-50">
                 <item.icon size={18} style={{ color:'#c9a84c' }} />
               </div>
-              <p style={{ fontFamily:'Montserrat', fontSize:'9px', letterSpacing:'0.38em', color:'#555555', marginBottom:'10px', textTransform:'uppercase', fontWeight:600 }}>
+              <p style={{ fontFamily:'Inter', fontSize:'9px', letterSpacing:'0.38em', color:'#555555', marginBottom:'10px', textTransform:'uppercase', fontWeight:600 }}>
                 {item.label}
               </p>
               {item.href
                 ? <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel="noreferrer"
-                    style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(17px,2vw,25px)', color:'#1a1a1a', textDecoration:'none', transition:'color 0.3s', fontWeight:600 }}
+                    style={{ fontFamily:'Playfair Display,serif', fontSize:'clamp(17px,2vw,25px)', color:'#1a1a1a', textDecoration:'none', transition:'color 0.3s', fontWeight:600 }}
                     className="hover:!text-amber-700">
                     {item.val}
                   </a>
-                : <p style={{ fontFamily:'Cormorant Garamond,serif', fontSize:'clamp(17px,2vw,25px)', color:'#1a1a1a', fontWeight:600 }}>{item.val}</p>
+                : <p style={{ fontFamily:'Playfair Display,serif', fontSize:'clamp(17px,2vw,25px)', color:'#1a1a1a', fontWeight:600 }}>{item.val}</p>
               }
             </motion.div>
           ))}
@@ -928,7 +928,7 @@ function Contact() {
 
         <motion.div {...slideUp(0.2)} style={{ textAlign:'center' }}>
           <a href="tel:03111786243"
-            style={{ display:'inline-flex', alignItems:'center', gap:'14px', background:'#1a1a1a', color:'#fff', fontFamily:'Montserrat', fontSize:'11px', letterSpacing:'0.28em', fontWeight:700, padding:'clamp(16px,2vh,20px) clamp(36px,5vw,64px)', textDecoration:'none', transition:'background 0.3s' }}
+            style={{ display:'inline-flex', alignItems:'center', gap:'14px', background:'#1a1a1a', color:'#fff', fontFamily:'Inter', fontSize:'11px', letterSpacing:'0.28em', fontWeight:700, padding:'clamp(16px,2vh,20px) clamp(36px,5vw,64px)', textDecoration:'none', transition:'background 0.3s' }}
             onMouseEnter={e => e.currentTarget.style.background='#c9a84c'}
             onMouseLeave={e => e.currentTarget.style.background='#1a1a1a'}
           >

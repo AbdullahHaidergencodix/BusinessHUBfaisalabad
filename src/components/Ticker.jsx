@@ -21,7 +21,7 @@ export default function Ticker({ dark = false }) {
       >
         {all.map((item,i) => (
           <span key={i} style={{ display:'inline-flex', alignItems:'center' }}>
-            <span style={{ fontFamily:'Montserrat', fontSize:'10px', letterSpacing:'0.3em', color: dark ? '#c9a84c' : '#fff', fontWeight:600, textTransform:'uppercase' }}>
+            <span style={{ fontFamily:'Inter', fontSize:'10px', letterSpacing:'0.3em', color: dark ? '#c9a84c' : '#fff', fontWeight:600, textTransform:'uppercase' }}>
               {item}
             </span>
             <Diamond dark={dark} />

@@ -1,21 +1,30 @@
 #!/bin/bash
 cd ~/Desktop/Business\ Hub\ Demo\ Site
 
-# bump all thin font weights to readable ones
-sed -i '' \
-  -e "s/fontWeight:400/fontWeight:500/g" \
-  -e "s/fontWeight: 400/fontWeight: 500/g" \
-  -e "s/fontWeight:300/fontWeight:500/g" \
-  -e "s/fontWeight: 300/fontWeight: 500/g" \
-  src/pages/Home.jsx src/components/Navbar.jsx src/components/Footer.jsx
+echo "🔤 Swapping to Inter + Playfair Display..."
 
-# also bump the P helper component specifically
-sed -i '' \
-  -e "s/fontSize:'13.5px',/fontSize:'14px',/g" \
-  -e "s/fontSize: '13.5px',/fontSize: '14px',/g" \
-  src/pages/Home.jsx
+# ── UPDATE index.html to load new Google Fonts ─────────────────────────────────
+cat > index.html << 'EOF'
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/images/logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Business Hub Faisalabad — Premium Drive-Thru Commercial Project on Sargodha Road by Fatir Developers." />
+    <title>Business Hub Faisalabad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+EOF
 
-# bump base font size and weight in css
+# ── UPDATE index.css ────────────────────────────────────────────────────────────
 cat > src/index.css << 'EOF'
 @import "tailwindcss";
 
@@ -25,17 +34,18 @@ cat > src/index.css << 'EOF'
   body {
     background-color: #ffffff;
     color: #111111;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   h1, h2, h3, h4, h5 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
   }
-  p, span, a, li {
+  p, span, a, li, button, input, textarea {
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
   }
   ::-webkit-scrollbar { width: 3px; }
@@ -45,6 +55,65 @@ cat > src/index.css << 'EOF'
 }
 EOF
 
-echo "✅ Font weights fixed"
-pnpm build && git add . && git commit -m "💪 Font weight 300/400 → 500/600 sitewide — thick readable text" && git push origin main
-echo "🚀 Live in ~60 seconds"
+# ── SWAP FONTS in Home.jsx ──────────────────────────────────────────────────────
+sed -i '' \
+  -e "s/fontFamily:'Cormorant Garamond,serif'/fontFamily:'Playfair Display,serif'/g" \
+  -e "s/fontFamily: 'Cormorant Garamond,serif'/fontFamily: 'Playfair Display,serif'/g" \
+  -e "s/fontFamily:\"Cormorant Garamond,serif\"/fontFamily:\"Playfair Display,serif\"/g" \
+  -e "s/'Cormorant Garamond, serif'/'Playfair Display, serif'/g" \
+  -e "s/fontFamily:'Montserrat'/fontFamily:'Inter'/g" \
+  -e "s/fontFamily: 'Montserrat'/fontFamily: 'Inter'/g" \
+  -e "s/fontFamily:\"Montserrat\"/fontFamily:\"Inter\"/g" \
+  src/pages/Home.jsx
+
+# ── SWAP FONTS in Navbar.jsx ────────────────────────────────────────────────────
+sed -i '' \
+  -e "s/Cormorant Garamond,serif/Playfair Display,serif/g" \
+  -e "s/'Cormorant Garamond'/'Playfair Display'/g" \
+  -e "s/fontFamily:'Montserrat'/fontFamily:'Inter'/g" \
+  -e "s/fontFamily: 'Montserrat'/fontFamily: 'Inter'/g" \
+  src/components/Navbar.jsx
+
+# ── SWAP FONTS in Footer.jsx ────────────────────────────────────────────────────
+sed -i '' \
+  -e "s/Cormorant Garamond,serif/Playfair Display,serif/g" \
+  -e "s/'Cormorant Garamond'/'Playfair Display'/g" \
+  -e "s/fontFamily:'Montserrat'/fontFamily:'Inter'/g" \
+  -e "s/fontFamily: 'Montserrat'/fontFamily: 'Inter'/g" \
+  src/components/Footer.jsx
+
+# ── SWAP FONTS in WhatsApp.jsx ──────────────────────────────────────────────────
+sed -i '' \
+  -e "s/fontFamily:'Montserrat'/fontFamily:'Inter'/g" \
+  -e "s/fontFamily: 'Montserrat'/fontFamily: 'Inter'/g" \
+  src/components/WhatsApp.jsx
+
+# ── SWAP FONTS in Ticker.jsx ────────────────────────────────────────────────────
+sed -i '' \
+  -e "s/fontFamily:'Montserrat'/fontFamily:'Inter'/g" \
+  -e "s/fontFamily: 'Montserrat'/fontFamily: 'Inter'/g" \
+  src/components/Ticker.jsx
+
+echo ""
+echo "✅ Font swap done. Building..."
+pnpm build
+
+if [ $? -ne 0 ]; then
+  echo "❌ Build failed"
+  exit 1
+fi
+
+git add .
+git commit -m "🔤 Font swap: Cormorant Garamond → Playfair Display, Montserrat → Inter
+
+- Playfair Display: bold, confident, legible serif for all headings
+- Inter: the gold standard for UI readability, clean and thick
+- Loaded via Google Fonts with correct weight range (400-800)
+- Applied across all components sitewide"
+git push origin main
+
+echo ""
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "✅ Pushed — Vercel deploying now"
+echo "🌐 Live in ~60 seconds"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
