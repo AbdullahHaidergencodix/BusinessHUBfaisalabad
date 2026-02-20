@@ -233,24 +233,35 @@ function Hero() {
 ───────────────────────────────────────────────────── */
 function UrgencyBar() {
   return (
-    <div style={{background:T.black,padding:'0'}}>
-      <div style={{maxWidth:'1200px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(4,1fr)'}}>
+    <div style={{background:'#080808',borderTop:'1px solid rgba(201,168,76,0.15)',borderBottom:'1px solid rgba(201,168,76,0.15)',position:'relative',overflow:'hidden'}}>
+      {/* subtle gold glow behind bar */}
+      <div style={{position:'absolute',top:0,left:0,right:0,height:'1px',background:'linear-gradient(to right,transparent,rgba(201,168,76,0.5),transparent)',pointerEvents:'none'}}/>
+      <div style={{position:'absolute',inset:0,background:'radial-gradient(ellipse 60% 100% at 50% 0%,rgba(201,168,76,0.04),transparent)',pointerEvents:'none'}}/>
+
+      <div style={{maxWidth:'1400px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(4,1fr)',position:'relative'}}>
         {[
-          {val:10,  suffix:'%',   label:'Booking Amount',        sub:'Start owning today'            },
-          {val:2,   suffix:' yr', label:'Installment Plan',      sub:'24 easy monthly payments'      },
-          {val:22,  suffix:'K+',  label:'PKR per Sq.Ft',         sub:'Lowest on Sargodha Road'       },
-          {val:100, suffix:'%',   label:'TMA Approved',          sub:'Zero legal risk'               },
+          {val:10,  suffix:'%',   label:'Booking Amount',   sub:'Start owning today'       },
+          {val:2,   suffix:' yr', label:'Installment Plan', sub:'24 easy monthly payments' },
+          {val:22,  suffix:'K+',  label:'PKR per Sq.Ft',    sub:'Lowest on Sargodha Road'  },
+          {val:100, suffix:'%',   label:'TMA Approved',     sub:'Zero legal risk'          },
         ].map((s,i)=>(
-          <motion.div key={s.label} {...fromBelow(i*0.07)}
-            style={{padding:'clamp(28px,4vh,44px) 16px',textAlign:'center',borderRight:i<3?'1px solid rgba(255,255,255,0.06)':'none',borderBottom:'none'}}>
-            <p style={{...T.heading,fontSize:'clamp(36px,4.5vw,58px)',color:T.gold,lineHeight:1}}>
+          <motion.div key={s.label} {...fromBelow(i*0.08)}
+            style={{padding:'clamp(32px,5vh,52px) clamp(16px,2vw,24px)',textAlign:'center',position:'relative',borderRight:i<3?'1px solid rgba(255,255,255,0.04)':'none'}}>
+
+            {/* top accent line per cell */}
+            <div style={{position:'absolute',top:0,left:'20%',right:'20%',height:'2px',background:i===0?'linear-gradient(to right,transparent,#c9a84c,transparent)':'linear-gradient(to right,transparent,rgba(201,168,76,0.3),transparent)'}}/>
+
+            <p style={{...T.heading,fontSize:'clamp(40px,5vw,64px)',color:T.gold,lineHeight:1,marginBottom:'2px'}}>
               <Counter to={s.val}/>{s.suffix}
             </p>
-            <p style={{...T.bold,fontSize:'11px',color:'#ffffff',marginTop:'8px',letterSpacing:'0.05em'}}>{s.label}</p>
-            <p style={{...T.body,fontSize:'11px',color:'rgba(255,255,255,0.4)',marginTop:'4px'}}>{s.sub}</p>
+            <p style={{...T.bold,fontSize:'11px',color:'#ffffff',marginTop:'10px',letterSpacing:'0.1em',textTransform:'uppercase'}}>{s.label}</p>
+            <p style={{...T.body,fontSize:'10.5px',color:'rgba(255,255,255,0.35)',marginTop:'5px',letterSpacing:'0.03em'}}>{s.sub}</p>
           </motion.div>
         ))}
       </div>
+
+      {/* bottom rule */}
+      <div style={{position:'absolute',bottom:0,left:0,right:0,height:'1px',background:'linear-gradient(to right,transparent,rgba(201,168,76,0.5),transparent)',pointerEvents:'none'}}/>
     </div>
   )
 }
