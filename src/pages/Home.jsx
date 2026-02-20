@@ -128,8 +128,8 @@ function Hero() {
       </motion.div>
 
       {/* overlays — heavy on purpose */}
-      <div style={{position:'absolute',inset:0,background:'rgba(0,0,0,0.65)',zIndex:3}} />
-      <div style={{position:'absolute',inset:0,background:'linear-gradient(110deg,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.3) 55%,transparent 100%)',zIndex:4}} />
+      <div style={{position:'absolute',inset:0,background:'rgba(0,0,0,0.72)',zIndex:3}} />
+      <div style={{position:'absolute',inset:0,background:'linear-gradient(110deg,rgba(0,0,0,0.90) 0%,rgba(0,0,0,0.40) 55%,transparent 100%)',zIndex:4}} />
       <div style={{position:'absolute',bottom:0,left:0,right:0,height:'220px',background:'linear-gradient(to top,#ffffff,transparent)',zIndex:4}} />
       <div style={{position:'absolute',top:0,left:0,right:0,height:'180px',background:'linear-gradient(to bottom,rgba(0,0,0,0.6),transparent)',zIndex:4}} />
 
@@ -147,23 +147,23 @@ function Hero() {
           </motion.div>
 
           {/* headline — lead with transformation */}
-          <h1 style={{...T.heading,lineHeight:1.0,marginBottom:'clamp(12px,2vh,20px)',maxWidth:'clamp(320px,60vw,740px)'}}>
+          <h1 style={{...T.heading,lineHeight:0.93,marginBottom:'clamp(16px,2.5vh,28px)',maxWidth:'clamp(320px,60vw,740px)'}}>
             <span style={{display:'block',fontSize:'clamp(14px,1.8vw,19px)',fontFamily:'Inter,sans-serif',fontWeight:600,color:'rgba(255,255,255,0.7)',letterSpacing:'0.08em',marginBottom:'10px',fontStyle:'normal'}}>
               YOUR INVESTMENT. YOUR LEGACY.
             </span>
-            <span style={{display:'block',fontSize:'clamp(46px,8vw,108px)',color:'#ffffff',lineHeight:0.95,textShadow:'0 4px 40px rgba(0,0,0,0.4)'}}>
+            <span style={{display:'block',fontSize:'clamp(46px,8vw,108px)',color:'#ffffff',lineHeight:0.92,textShadow:'0 6px 60px rgba(0,0,0,0.5)'}}>
               Faisalabad's
             </span>
             <span style={{display:'block',fontSize:'clamp(46px,8vw,108px)',fontStyle:'italic',background:'linear-gradient(135deg,#f5d485,#c9a84c,#7a4f08)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',lineHeight:0.95}}>
               Most Valuable
             </span>
-            <span style={{display:'block',fontSize:'clamp(46px,8vw,108px)',color:'#ffffff',lineHeight:0.95,textShadow:'0 4px 40px rgba(0,0,0,0.4)'}}>
+            <span style={{display:'block',fontSize:'clamp(46px,8vw,108px)',color:'#ffffff',lineHeight:0.92,textShadow:'0 6px 60px rgba(0,0,0,0.5)'}}>
               Address.
             </span>
           </h1>
 
           {/* sub — one line, clear value prop */}
-          <p style={{...T.body,fontSize:'clamp(13px,1.4vw,16px)',color:'rgba(255,255,255,0.8)',marginBottom:'clamp(24px,4vh,44px)',maxWidth:'480px',lineHeight:'1.7',fontWeight:500}}>
+          <p style={{...T.body,fontSize:'clamp(13px,1.4vw,16px)',color:'rgba(255,255,255,0.8)',marginBottom:'clamp(24px,4vh,44px)',maxWidth:'480px',lineHeight:'1.85',fontWeight:500,letterSpacing:'0.02em'}}>
             Drive-thru commercial units on Sargodha Road. TMA approved. 10% booking. Returns that outperform the market.
           </p>
 
@@ -187,7 +187,7 @@ function Hero() {
 
           {/* social proof strip — 30yr rule: put trust signals near CTAs */}
           <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1.1,duration:0.8}}
-            style={{display:'flex',gap:'28px',marginTop:'clamp(28px,4vh,48px)',flexWrap:'wrap'}}>
+            style={{display:'flex',gap:'36px',marginTop:'clamp(36px,5.5vh,60px)',flexWrap:'wrap'}}>
             {[
               {icon:Shield,   text:'TMA Government Approved'},
               {icon:TrendingUp,text:'Highest ROI Corridor'},

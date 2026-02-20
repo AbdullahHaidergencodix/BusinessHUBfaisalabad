@@ -25,3 +25,61 @@
   ::-webkit-scrollbar-thumb { background: #c9a84c; }
   * { -webkit-tap-highlight-color: transparent; }
 }
+
+/* ── LUXURY SPACING PASS ────────────────────────────── */
+
+/* headings — open and authoritative */
+h1, h2, h3 {
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+}
+
+h4, h5, h6 {
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+/* body — readable, never cramped */
+p {
+  line-height: 1.95;
+  letter-spacing: 0.012em;
+}
+
+/* uppercase labels — luxury spacing */
+.label, [style*="letterSpacing:'0.22em'"],
+[style*='letterSpacing: "0.22em"'] {
+  letter-spacing: 0.28em;
+}
+
+/* inter body text — slightly wider tracking */
+body, p, span, li, a {
+  letter-spacing: 0.014em;
+}
+
+/* section breathing room — more vertical whitespace */
+section {
+  padding-top: clamp(90px, 13vh, 150px);
+  padding-bottom: clamp(90px, 13vh, 150px);
+}
+
+/* hero headline — tight but intentional */
+.hero-headline {
+  letter-spacing: -0.02em;
+  line-height: 0.93;
+}
+
+/* gold gradient text — needs no shadow, just space */
+[style*="WebkitTextFillColor: 'transparent'"],
+[style*="WebkitTextFillColor:'transparent'"] {
+  letter-spacing: -0.015em;
+}
+
+/* stats numbers — monumental */
+[style*="Playfair Display"] {
+  letter-spacing: -0.02em;
+}
+
+/* CTAs — wider tracking = more authority */
+a[style*="letterSpacing"] {
+  letter-spacing: 0.18em !important;
+}
