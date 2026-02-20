@@ -4,28 +4,15 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    background-color: #fafafa;
-    color: #0a0a0a;
+    background-color: #f8f6f1;
+    color: #1a1a1a;
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
   h1, h2, h3, h4, h5 { font-family: 'Cormorant Garamond', serif; }
   ::-webkit-scrollbar { width: 3px; }
-  ::-webkit-scrollbar-track { background: #fafafa; }
+  ::-webkit-scrollbar-track { background: #f8f6f1; }
   ::-webkit-scrollbar-thumb { background: #c9a84c; }
   * { -webkit-tap-highlight-color: transparent; }
-}
-
-@layer utilities {
-  .gold-text {
-    background: linear-gradient(135deg, #b8860b 0%, #c9a84c 50%, #daa520 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .section-pad { padding: 110px 0; }
-  @media (max-width: 768px) {
-    .section-pad { padding: 72px 0; }
-  }
 }
