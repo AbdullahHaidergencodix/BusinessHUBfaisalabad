@@ -143,7 +143,7 @@ function Hero() {
             style={{display:'inline-flex',alignItems:'center',gap:'8px',background:'rgba(201,168,76,0.15)',border:'1px solid rgba(201,168,76,0.4)',padding:'6px 14px',marginBottom:'clamp(18px,3vh,30px)',backdropFilter:'blur(8px)'}}
           >
             <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c9a84c'}} />
-            <span style={{...T.label,color:'#c9a84c',fontSize:'9px'}}>Bookings Now Open — Limited Units Remaining</span>
+            <span style={{...T.label,color:'rgba(255,255,255,0.6)',fontSize:'9px'}}>Bookings Now Open — Limited Units Remaining</span>
           </motion.div>
 
           {/* headline — lead with transformation */}
@@ -233,10 +233,10 @@ function Hero() {
 ───────────────────────────────────────────────────── */
 function UrgencyBar() {
   return (
-    <div style={{background:'#080808',borderTop:'1px solid rgba(201,168,76,0.15)',borderBottom:'1px solid rgba(201,168,76,0.15)',position:'relative',overflow:'hidden'}}>
+    <div style={{background:'rgba(6,6,6,0.82)',backdropFilter:'blur(24px) saturate(1.4)',WebkitBackdropFilter:'blur(24px) saturate(1.4)',borderTop:'1px solid rgba(201,168,76,0.18)',borderBottom:'1px solid rgba(255,255,255,0.04)',position:'relative',overflow:'hidden'}}>
       {/* subtle gold glow behind bar */}
       <div style={{position:'absolute',top:0,left:0,right:0,height:'1px',background:'linear-gradient(to right,transparent,rgba(201,168,76,0.5),transparent)',pointerEvents:'none'}}/>
-      <div style={{position:'absolute',inset:0,background:'radial-gradient(ellipse 60% 100% at 50% 0%,rgba(201,168,76,0.04),transparent)',pointerEvents:'none'}}/>
+      <div style={{position:'absolute',inset:0,background:'radial-gradient(ellipse 70% 120% at 50% 0%,rgba(201,168,76,0.07),transparent 70%)',pointerEvents:'none'}}/>
 
       <div style={{maxWidth:'1400px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(4,1fr)',position:'relative'}}>
         {[
@@ -246,22 +246,22 @@ function UrgencyBar() {
           {val:100, suffix:'%',   label:'TMA Approved',     sub:'Zero legal risk'          },
         ].map((s,i)=>(
           <motion.div key={s.label} {...fromBelow(i*0.08)}
-            style={{padding:'clamp(32px,5vh,52px) clamp(16px,2vw,24px)',textAlign:'center',position:'relative',borderRight:i<3?'1px solid rgba(255,255,255,0.04)':'none'}}>
+            style={{padding:'clamp(32px,5vh,52px) clamp(16px,2vw,24px)',textAlign:'center',position:'relative',borderRight:i<3?'1px solid rgba(255,255,255,0.03)':'none',background:i%2===0?'rgba(255,255,255,0.005)':'transparent'}}>
 
             {/* top accent line per cell */}
-            <div style={{position:'absolute',top:0,left:'20%',right:'20%',height:'2px',background:i===0?'linear-gradient(to right,transparent,#c9a84c,transparent)':'linear-gradient(to right,transparent,rgba(201,168,76,0.3),transparent)'}}/>
+            <div style={{position:'absolute',top:0,left:'20%',right:'20%',height:'2px',background:i===0?'linear-gradient(to right,transparent,rgba(201,168,76,0.9),transparent)':'linear-gradient(to right,transparent,rgba(201,168,76,0.22),transparent)'}}/>
 
-            <p style={{...T.heading,fontSize:'clamp(40px,5vw,64px)',color:T.gold,lineHeight:1,marginBottom:'2px'}}>
+            <p style={{...T.heading,fontSize:'clamp(40px,5vw,64px)',color:T.gold,lineHeight:1,marginBottom:'2px',fontWeight:800}}>
               <Counter to={s.val}/>{s.suffix}
             </p>
-            <p style={{...T.bold,fontSize:'11px',color:'#ffffff',marginTop:'10px',letterSpacing:'0.1em',textTransform:'uppercase'}}>{s.label}</p>
-            <p style={{...T.body,fontSize:'10.5px',color:'rgba(255,255,255,0.35)',marginTop:'5px',letterSpacing:'0.03em'}}>{s.sub}</p>
+            <p style={{...T.bold,fontSize:'10.5px',color:'rgba(255,255,255,0.85)',marginTop:'10px',letterSpacing:'0.12em',textTransform:'uppercase'}}>{s.label}</p>
+            <p style={{...T.body,fontSize:'10.5px',color:'rgba(255,255,255,0.3)',marginTop:'5px',letterSpacing:'0.04em',fontStyle:'italic'}}>{s.sub}</p>
           </motion.div>
         ))}
       </div>
 
       {/* bottom rule */}
-      <div style={{position:'absolute',bottom:0,left:0,right:0,height:'1px',background:'linear-gradient(to right,transparent,rgba(201,168,76,0.5),transparent)',pointerEvents:'none'}}/>
+      <div style={{position:'absolute',bottom:0,left:0,right:0,height:'1px',background:'linear-gradient(to right,transparent,rgba(255,255,255,0.06),transparent)',pointerEvents:'none'}}/>
     </div>
   )
 }

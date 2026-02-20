@@ -83,3 +83,36 @@ section {
 a[style*="letterSpacing"] {
   letter-spacing: 0.18em !important;
 }
+
+/* ── GOLD HIERARCHY PASS ────────────────────────────────────────────────────── */
+
+/* Section labels (the small-caps gold lines) —
+   support the heading, never steal from it          */
+.section-label-line {
+  opacity: 0.75;
+}
+
+/* Urgency bar — glass depth layer */
+.urgency-bar-wrap {
+  position: relative;
+  isolation: isolate;
+}
+.urgency-bar-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.025) 0%,
+    rgba(255,255,255,0.0)   50%,
+    rgba(0,0,0,0.15)        100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Stat numbers in urgency bar — always win */
+.urgency-bar-wrap [style*="Playfair Display"] {
+  position: relative;
+  z-index: 2;
+}

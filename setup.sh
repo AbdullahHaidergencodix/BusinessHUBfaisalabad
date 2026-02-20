@@ -1,305 +1,180 @@
 #!/bin/bash
 cd ~/Desktop/Business\ Hub\ Demo\ Site
 
-echo "🏛️ Architectural lead line + hero hierarchy..."
-
-# ── HERO CONTENT REWRITE ────────────────────────────────────────────────────────
-# We're targeting the content div inside Hero and rewriting it precisely
+echo "✨ Gold hierarchy + glass urgency bar..."
 
 python3 << 'PYEOF'
-import re
-
 with open('src/pages/Home.jsx', 'r') as f:
     src = f.read()
 
-# ── 1. REPLACE HERO CONTENT DIV ─────────────────────────────────────────────────
-old_content = '''      <div style={{position:'absolute',inset:0,zIndex:10,display:'flex',flexDirection:'column',justifyContent:'center',padding:'0 clamp(28px,7vw,110px)',paddingTop:'96px'}}>
-        <motion.div initial={{opacity:0,y:40}} animate={{opacity:1,y:0}} transition={{duration:1.1,delay:0.3,ease:[0.22,1,0.36,1]}}>
+# ── 1. MUTE THE HERO LABELS ─────────────────────────────────────────────────────
+# Scarcity pill border + bg — less gold, more smoke
+src = src.replace(
+    "background:'rgba(201,168,76,0.12)',border:'1px solid rgba(201,168,76,0.35)'",
+    "background:'rgba(255,255,255,0.06)',border:'1px solid rgba(255,255,255,0.15)'"
+)
+# Pill dot — white instead of gold
+src = src.replace(
+    "width:'5px',height:'5px',borderRadius:'50%',background:'#c9a84c',flexShrink:0",
+    "width:'5px',height:'5px',borderRadius:'50%',background:'rgba(255,255,255,0.5)',flexShrink:0"
+)
+# Pill label text — cooler, not gold
+src = src.replace(
+    "{...T.label,color:'#c9a84c',fontSize:'9px'}}>Bookings Now Open",
+    "{...T.label,color:'rgba(255,255,255,0.6)',fontSize:'9px'}}>Bookings Now Open"
+)
+# Site identifier — even more muted
+src = src.replace(
+    "style={{...T.label,color:'rgba(255,255,255,0.35)',fontSize:'8px',letterSpacing:'0.22em'}}",
+    "style={{...T.label,color:'rgba(255,255,255,0.22)',fontSize:'8px',letterSpacing:'0.25em'}}"
+)
+# Eyebrow above headline — muted white not gold-adjacent
+src = src.replace(
+    "color:'rgba(255,255,255,0.55)',letterSpacing:'0.14em',marginBottom:'14px',fontStyle:'normal'",
+    "color:'rgba(255,255,255,0.38)',letterSpacing:'0.16em',marginBottom:'14px',fontStyle:'normal'"
+)
+# Trust strip icons — muted gold not full gold
+src = src.replace(
+    "<s.icon size={12} style={{color:'#c9a84c',flexShrink:0}}/>",
+    "<s.icon size={12} style={{color:'rgba(201,168,76,0.55)',flexShrink:0}}/>"
+)
+# Trust strip text — slightly more muted
+src = src.replace(
+    "fontSize:'11px',color:'rgba(255,255,255,0.55)',fontWeight:500,letterSpacing:'0.02em'",
+    "fontSize:'11px',color:'rgba(255,255,255,0.42)',fontWeight:500,letterSpacing:'0.02em'"
+)
+# Vertical lead line separator in trust strip — softer
+src = src.replace(
+    "width:'1px',height:'32px',background:'rgba(201,168,76,0.3)',flexShrink:0",
+    "width:'1px',height:'32px',background:'rgba(255,255,255,0.12)',flexShrink:0"
+)
+src = src.replace(
+    "width:'1px',height:'16px',background:'rgba(255,255,255,0.1)',flexShrink:0,marginRight:'4px'",
+    "width:'1px',height:'14px',background:'rgba(255,255,255,0.08)',flexShrink:0,marginRight:'4px'"
+)
 
-          {/* urgency pill — 30yr rule: always show scarcity above the fold */}
-          <motion.div
-            initial={{opacity:0,x:-20}} animate={{opacity:1,x:0}} transition={{delay:0.6,duration:0.7}}
-            style={{display:'inline-flex',alignItems:'center',gap:'8px',background:'rgba(201,168,76,0.15)',border:'1px solid rgba(201,168,76,0.4)',padding:'6px 14px',marginBottom:'clamp(18px,3vh,30px)',backdropFilter:'blur(8px)'}}
-          >
-            <div style={{width:'6px',height:'6px',borderRadius:'50%',background:'#c9a84c'}} />
-            <span style={{...T.label,color:'#c9a84c',fontSize:'9px'}}>Bookings Now Open — Limited Units Remaining</span>
-          </motion.div>
+print("✅ Hero labels muted")
 
-          {/* headline — lead with transformation */}
-          <h1 style={{...T.heading,lineHeight:1.0,marginBottom:'clamp(16px,2.5vh,28px)',maxWidth:'clamp(320px,60vw,740px)'}}>
-            <span style={{display:'block',fontSize:'clamp(14px,1.8vw,19px)',fontFamily:'Inter,sans-serif',fontWeight:600,color:'rgba(255,255,255,0.7)',letterSpacing:'0.08em',marginBottom:'10px',fontStyle:'normal'}}>
-              YOUR INVESTMENT. YOUR LEGACY.
-            </span>
-            <span style={{display:'block',fontSize:'clamp(46px,8vw,108px)',color:'#ffffff',lineHeight:0.92,textShadow:'0 6px 60px rgba(0,0,0,0.5)'}}>
-              Faisalabad\'s
-            </span>
-            <span style={{display:'block',fontSize:'clamp(46px,8vw,108px)',fontStyle:'italic',background:'linear-gradient(135deg,#f5d485,#c9a84c,#7a4f08)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',lineHeight:0.92}}>
-              Most Valuable
-            </span>
-            <span style={{display:'block',fontSize:'clamp(46px,8vw,108px)',color:'#ffffff',lineHeight:0.92,textShadow:'0 6px 60px rgba(0,0,0,0.5)'}}>
-              Address.
-            </span>
-          </h1>
+# ── 2. GLASS URGENCY BAR ────────────────────────────────────────────────────────
+old_bar_bg = "background:'#080808',borderTop:'1px solid rgba(201,168,76,0.15)',borderBottom:'1px solid rgba(201,168,76,0.15)',position:'relative',overflow:'hidden'"
+new_bar_bg = "background:'rgba(6,6,6,0.82)',backdropFilter:'blur(24px) saturate(1.4)',WebkitBackdropFilter:'blur(24px) saturate(1.4)',borderTop:'1px solid rgba(201,168,76,0.18)',borderBottom:'1px solid rgba(255,255,255,0.04)',position:'relative',overflow:'hidden'"
+src = src.replace(old_bar_bg, new_bar_bg)
 
-          {/* sub — one line, clear value prop */}
-          <p style={{...T.body,fontSize:'clamp(13px,1.4vw,16px)',color:'rgba(255,255,255,0.8)',marginBottom:'clamp(32px,5vh,56px)',maxWidth:'480px',lineHeight:'1.85',fontWeight:500,letterSpacing:'0.02em'}}>
-            Drive-thru commercial units on Sargodha Road. TMA approved. 10% booking. Returns that outperform the market.
-          </p>
+# inner glow — warmer, more 3D
+src = src.replace(
+    "background:'radial-gradient(ellipse 60% 100% at 50% 0%,rgba(201,168,76,0.04),transparent)'",
+    "background:'radial-gradient(ellipse 70% 120% at 50% 0%,rgba(201,168,76,0.07),transparent 70%)'"
+)
 
-          {/* CTAs — primary action + trust signal */}
-          <div style={{display:'flex',gap:'14px',flexWrap:'wrap',alignItems:'center'}}>
-            <a href="tel:03111786243"
-              style={{display:'inline-flex',alignItems:'center',gap:'10px',background:'#c9a84c',color:'#ffffff',fontFamily:'Inter,sans-serif',fontSize:'12px',letterSpacing:'0.15em',fontWeight:700,padding:'clamp(14px,2vh,18px) clamp(28px,4vw,40px)',textDecoration:'none',transition:'all 0.3s',whiteSpace:'nowrap',boxShadow:'0 8px 32px rgba(201,168,76,0.35)'}}
-              onMouseEnter={e=>{e.currentTarget.style.background='#7a4f08';e.currentTarget.style.transform='translateY(-2px)'}}
-              onMouseLeave={e=>{e.currentTarget.style.background='#c9a84c';e.currentTarget.style.transform='translateY(0)'}}
-            >
-              <Phone size={14}/> BOOK YOUR UNIT NOW
-            </a>
-            <a href="#about"
-              style={{display:'inline-flex',alignItems:'center',gap:'8px',color:'rgba(255,255,255,0.8)',fontFamily:'Inter,sans-serif',fontSize:'12px',letterSpacing:'0.12em',fontWeight:600,textDecoration:'none',transition:'all 0.3s',borderBottom:'1px solid rgba(255,255,255,0.3)',paddingBottom:'2px',whiteSpace:'nowrap'}}
-              onMouseEnter={e=>{e.currentTarget.style.color='#c9a84c';e.currentTarget.style.borderColor='#c9a84c'}}
-              onMouseLeave={e=>{e.currentTarget.style.color='rgba(255,255,255,0.8)';e.currentTarget.style.borderColor='rgba(255,255,255,0.3)'}}
-            >
-              See why investors choose us <ChevronRight size={13}/>
-            </a>
-          </div>
+# cell top accent — first cell slightly brighter
+src = src.replace(
+    "background:i===0?'linear-gradient(to right,transparent,#c9a84c,transparent)':'linear-gradient(to right,transparent,rgba(201,168,76,0.3),transparent)'",
+    "background:i===0?'linear-gradient(to right,transparent,rgba(201,168,76,0.9),transparent)':'linear-gradient(to right,transparent,rgba(201,168,76,0.22),transparent)'"
+)
 
-          {/* social proof strip — 30yr rule: put trust signals near CTAs */}
-          <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1.1,duration:0.8}}
-            style={{display:'flex',gap:'36px',marginTop:'clamp(36px,5.5vh,60px)',flexWrap:'wrap'}}>
-            {[
-              {icon:Shield,   text:\'TMA Government Approved\'},
-              {icon:TrendingUp,text:\'Highest ROI Corridor\'},
-              {icon:Star,     text:\'Fatir Developers — Trusted Since 2010\'},
-            ].map(s=>(
-              <div key={s.text} style={{display:'flex',alignItems:'center',gap:'7px'}}>
-                <s.icon size={13} style={{color:'#c9a84c',flexShrink:0}}/>
-                <span style={{...T.body,fontSize:'11px',color:'rgba(255,255,255,0.6)',fontWeight:500}}>{s.text}</span>
-              </div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </div>'''
+# cell dividers — glass feel, very subtle
+src = src.replace(
+    "borderRight:i<3?'1px solid rgba(255,255,255,0.04)':'none'",
+    "borderRight:i<3?'1px solid rgba(255,255,255,0.03)':'none',background:i%2===0?'rgba(255,255,255,0.005)':'transparent'"
+)
 
-new_content = '''      <div style={{position:'absolute',inset:0,zIndex:10,display:'flex',flexDirection:'column',justifyContent:'center',padding:'0 clamp(28px,7vw,110px)',paddingTop:'96px'}}>
-        <motion.div initial={{opacity:0,y:40}} animate={{opacity:1,y:0}} transition={{duration:1.1,delay:0.3,ease:[0.22,1,0.36,1]}}>
+# stat number — pure gold, no change needed but bump weight
+src = src.replace(
+    "fontSize:'clamp(40px,5vw,64px)',color:T.gold,lineHeight:1,marginBottom:'2px'",
+    "fontSize:'clamp(40px,5vw,64px)',color:T.gold,lineHeight:1,marginBottom:'2px',fontWeight:800"
+)
 
-          {/* ── ARCHITECTURAL LEAD LINE ── */}
-          <div style={{display:'flex',alignItems:'stretch',gap:'0',marginBottom:'clamp(28px,4vh,44px)'}}>
+# stat label — slightly warmer white
+src = src.replace(
+    "fontSize:'11px',color:'#ffffff',marginTop:'10px',letterSpacing:'0.1em',textTransform:'uppercase'",
+    "fontSize:'10.5px',color:'rgba(255,255,255,0.85)',marginTop:'10px',letterSpacing:'0.12em',textTransform:'uppercase'"
+)
 
-            {/* the vertical line — the anchor */}
-            <motion.div
-              initial={{scaleY:0,opacity:0}} animate={{scaleY:1,opacity:1}}
-              transition={{duration:1.0,delay:0.5,ease:[0.22,1,0.36,1]}}
-              style={{width:'3px',background:'linear-gradient(to bottom,#c9a84c,rgba(201,168,76,0.2))',transformOrigin:'top',flexShrink:0,marginRight:'20px'}}
-            />
+# stat sub — a touch warmer
+src = src.replace(
+    "fontSize:'10.5px',color:'rgba(255,255,255,0.35)',marginTop:'5px',letterSpacing:'0.03em'",
+    "fontSize:'10.5px',color:'rgba(255,255,255,0.3)',marginTop:'5px',letterSpacing:'0.04em',fontStyle:'italic'"
+)
 
-            {/* stacked label + pill */}
-            <div style={{display:'flex',flexDirection:'column',justifyContent:'center',gap:'10px'}}>
-              <motion.div
-                initial={{opacity:0,x:-16}} animate={{opacity:1,x:0}} transition={{delay:0.7,duration:0.7}}
-                style={{display:'inline-flex',alignItems:'center',gap:'8px',background:'rgba(201,168,76,0.12)',border:'1px solid rgba(201,168,76,0.35)',padding:'5px 14px',backdropFilter:'blur(10px)',alignSelf:'flex-start'}}
-              >
-                <div style={{width:'5px',height:'5px',borderRadius:'50%',background:'#c9a84c',flexShrink:0}} />
-                <span style={{...T.label,color:'#c9a84c',fontSize:'9px'}}>Bookings Now Open — Limited Units Remaining</span>
-              </motion.div>
-              <motion.span
-                initial={{opacity:0,x:-16}} animate={{opacity:1,x:0}} transition={{delay:0.85,duration:0.7}}
-                style={{...T.label,color:'rgba(255,255,255,0.35)',fontSize:'8px',letterSpacing:'0.22em'}}
-              >
-                SARGODHA ROAD · FAISALABAD · EST. 2025
-              </motion.span>
-            </div>
-          </div>
+# bottom rule — match top, full gold gradient
+src = src.replace(
+    "bottom:0,left:0,right:0,height:'1px',background:'linear-gradient(to right,transparent,rgba(201,168,76,0.5),transparent)',pointerEvents:'none'",
+    "bottom:0,left:0,right:0,height:'1px',background:'linear-gradient(to right,transparent,rgba(255,255,255,0.06),transparent)',pointerEvents:'none'"
+)
 
-          {/* headline — tightened, anchored */}
-          <h1 style={{...T.heading,marginBottom:'clamp(20px,3vh,32px)',maxWidth:'clamp(320px,55vw,680px)'}}>
-            <motion.span
-              initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{delay:0.6,duration:0.9,ease:[0.22,1,0.36,1]}}
-              style={{display:'block',fontSize:'clamp(13px,1.6vw,17px)',fontFamily:'Inter,sans-serif',fontWeight:600,color:'rgba(255,255,255,0.55)',letterSpacing:'0.14em',marginBottom:'14px',fontStyle:'normal'}}
-            >
-              YOUR INVESTMENT. YOUR LEGACY.
-            </motion.span>
-            <motion.span
-              initial={{opacity:0,y:32}} animate={{opacity:1,y:0}} transition={{delay:0.7,duration:0.9,ease:[0.22,1,0.36,1]}}
-              style={{display:'block',fontSize:'clamp(52px,8.5vw,112px)',color:'#ffffff',lineHeight:0.91,textShadow:'0 2px 0 rgba(0,0,0,0.4),0 8px 48px rgba(0,0,0,0.6)',fontWeight:800}}
-            >
-              Faisalabad\'s
-            </motion.span>
-            <motion.span
-              initial={{opacity:0,y:32}} animate={{opacity:1,y:0}} transition={{delay:0.8,duration:0.9,ease:[0.22,1,0.36,1]}}
-              style={{display:'block',fontSize:'clamp(52px,8.5vw,112px)',fontStyle:'italic',background:'linear-gradient(100deg,#fff5cc 0%,#f5d485 25%,#c9a84c 55%,#7a4f08 100%)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundClip:'text',lineHeight:0.91,fontWeight:800,filter:'drop-shadow(0 4px 24px rgba(201,168,76,0.35))'}}
-            >
-              Most Valuable
-            </motion.span>
-            <motion.span
-              initial={{opacity:0,y:32}} animate={{opacity:1,y:0}} transition={{delay:0.9,duration:0.9,ease:[0.22,1,0.36,1]}}
-              style={{display:'block',fontSize:'clamp(52px,8.5vw,112px)',color:'#ffffff',lineHeight:0.91,textShadow:'0 2px 0 rgba(0,0,0,0.4),0 8px 48px rgba(0,0,0,0.6)',fontWeight:800}}
-            >
-              Address.
-            </motion.span>
-          </h1>
-
-          {/* sub — clean, not crowded */}
-          <motion.p
-            initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{delay:1.0,duration:0.8,ease:[0.22,1,0.36,1]}}
-            style={{...T.body,fontSize:'clamp(13px,1.3vw,15px)',color:'rgba(255,255,255,0.7)',marginBottom:'clamp(32px,5vh,52px)',maxWidth:'420px',lineHeight:'1.9',fontWeight:500,letterSpacing:'0.025em'}}
-          >
-            Drive-thru commercial units on Sargodha Road.<br/>
-            TMA approved · 10% booking · Market-beating returns.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{opacity:0,y:16}} animate={{opacity:1,y:0}} transition={{delay:1.05,duration:0.8}}
-            style={{display:'flex',gap:'14px',flexWrap:'wrap',alignItems:'center'}}
-          >
-            <a href="tel:03111786243"
-              style={{display:'inline-flex',alignItems:'center',gap:'10px',background:'#c9a84c',color:'#ffffff',fontFamily:'Inter,sans-serif',fontSize:'11px',letterSpacing:'0.18em',fontWeight:700,padding:'clamp(14px,2vh,18px) clamp(28px,4vw,42px)',textDecoration:'none',transition:'all 0.3s',whiteSpace:'nowrap',boxShadow:'0 8px 40px rgba(201,168,76,0.4)'}}
-              onMouseEnter={e=>{e.currentTarget.style.background='#7a4f08';e.currentTarget.style.transform='translateY(-2px)';e.currentTarget.style.boxShadow='0 14px 48px rgba(201,168,76,0.5)'}}
-              onMouseLeave={e=>{e.currentTarget.style.background='#c9a84c';e.currentTarget.style.transform='translateY(0)';e.currentTarget.style.boxShadow='0 8px 40px rgba(201,168,76,0.4)'}}
-            >
-              <Phone size={13}/> BOOK YOUR UNIT NOW
-            </a>
-            <a href="#about"
-              style={{display:'inline-flex',alignItems:'center',gap:'8px',color:'rgba(255,255,255,0.75)',fontFamily:'Inter,sans-serif',fontSize:'11px',letterSpacing:'0.14em',fontWeight:600,textDecoration:'none',transition:'all 0.3s',borderBottom:'1px solid rgba(255,255,255,0.25)',paddingBottom:'3px',whiteSpace:'nowrap'}}
-              onMouseEnter={e=>{e.currentTarget.style.color='#c9a84c';e.currentTarget.style.borderColor='#c9a84c'}}
-              onMouseLeave={e=>{e.currentTarget.style.color='rgba(255,255,255,0.75)';e.currentTarget.style.borderColor='rgba(255,255,255,0.25)'}}
-            >
-              See why investors choose us <ChevronRight size={13}/>
-            </a>
-          </motion.div>
-
-          {/* trust strip */}
-          <motion.div initial={{opacity:0}} animate={{opacity:1}} transition={{delay:1.2,duration:0.9}}
-            style={{display:'flex',gap:'28px',marginTop:'clamp(36px,5.5vh,60px)',flexWrap:'wrap',alignItems:'center'}}>
-            <div style={{width:'1px',height:'32px',background:'rgba(201,168,76,0.3)',flexShrink:0}}/>
-            {[
-              {icon:Shield,    text:\'TMA Government Approved\'},
-              {icon:TrendingUp,text:\'Highest ROI Corridor\'},
-              {icon:Star,      text:\'Fatir Developers — Trusted Since 2010\'},
-            ].map((s,i)=>(
-              <div key={s.text} style={{display:'flex',alignItems:'center',gap:'7px'}}>
-                {i>0&&<div style={{width:'1px',height:'16px',background:'rgba(255,255,255,0.1)',flexShrink:0,marginRight:'4px'}}/>}
-                <s.icon size={12} style={{color:'#c9a84c',flexShrink:0}}/>
-                <span style={{...T.body,fontSize:'11px',color:'rgba(255,255,255,0.55)',fontWeight:500,letterSpacing:'0.02em'}}>{s.text}</span>
-              </div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </div>'''
-
-if old_content in src:
-    src = src.replace(old_content, new_content)
-    print("✅ Hero content replaced")
-else:
-    print("⚠️  Hero content block not found exactly — applying fallback sed patches")
+print("✅ Glass urgency bar applied")
 
 with open('src/pages/Home.jsx', 'w') as f:
     f.write(src)
 PYEOF
 
-# ── URGENCY BAR — heavier foundation ───────────────────────────────────────────
-python3 << 'PYEOF'
-import re
+# ── GLOBAL LABEL MUTING in index.css ───────────────────────────────────────────
+# The Label component uses gold — we want section labels slightly pulled back
+# so they support headings, never compete with them
+cat >> src/index.css << 'EOF'
 
-with open('src/pages/Home.jsx', 'r') as f:
-    src = f.read()
+/* ── GOLD HIERARCHY PASS ────────────────────────────────────────────────────── */
 
-old_bar = '''function UrgencyBar() {
-  return (
-    <div style={{background:T.black,padding:'0'}}>
-      <div style={{maxWidth:'1200px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(4,1fr)'}}>
-        {[
-          {val:10,  suffix:'%',   label:'Booking Amount',        sub:'Start owning today'            },
-          {val:2,   suffix:' yr', label:'Installment Plan',      sub:'24 easy monthly payments'      },
-          {val:22,  suffix:'K+',  label:'PKR per Sq.Ft',         sub:'Lowest on Sargodha Road'       },
-          {val:100, suffix:'%',   label:'TMA Approved',          sub:'Zero legal risk'               },
-        ].map((s,i)=>(
-          <motion.div key={s.label} {...fromBelow(i*0.07)}
-            style={{padding:'clamp(28px,4vh,44px) 16px',textAlign:'center',borderRight:i<3?'1px solid rgba(255,255,255,0.06)':'none',borderBottom:'none'}}>
-            <p style={{...T.heading,fontSize:'clamp(36px,4.5vw,58px)',color:T.gold,lineHeight:1}}>
-              <Counter to={s.val}/>{s.suffix}
-            </p>
-            <p style={{...T.bold,fontSize:'11px',color:'#ffffff',marginTop:'8px',letterSpacing:'0.05em'}}>{s.label}</p>
-            <p style={{...T.body,fontSize:'11px',color:'rgba(255,255,255,0.4)',marginTop:'4px'}}>{s.sub}</p>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  )
-}'''
+/* Section labels (the small-caps gold lines) —
+   support the heading, never steal from it          */
+.section-label-line {
+  opacity: 0.75;
+}
 
-new_bar = '''function UrgencyBar() {
-  return (
-    <div style={{background:'#080808',borderTop:'1px solid rgba(201,168,76,0.15)',borderBottom:'1px solid rgba(201,168,76,0.15)',position:'relative',overflow:'hidden'}}>
-      {/* subtle gold glow behind bar */}
-      <div style={{position:'absolute',top:0,left:0,right:0,height:'1px',background:'linear-gradient(to right,transparent,rgba(201,168,76,0.5),transparent)',pointerEvents:'none'}}/>
-      <div style={{position:'absolute',inset:0,background:'radial-gradient(ellipse 60% 100% at 50% 0%,rgba(201,168,76,0.04),transparent)',pointerEvents:'none'}}/>
+/* Urgency bar — glass depth layer */
+.urgency-bar-wrap {
+  position: relative;
+  isolation: isolate;
+}
+.urgency-bar-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.025) 0%,
+    rgba(255,255,255,0.0)   50%,
+    rgba(0,0,0,0.15)        100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
 
-      <div style={{maxWidth:'1400px',margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(4,1fr)',position:'relative'}}>
-        {[
-          {val:10,  suffix:'%',   label:'Booking Amount',   sub:'Start owning today'       },
-          {val:2,   suffix:' yr', label:'Installment Plan', sub:'24 easy monthly payments' },
-          {val:22,  suffix:'K+',  label:'PKR per Sq.Ft',    sub:'Lowest on Sargodha Road'  },
-          {val:100, suffix:'%',   label:'TMA Approved',     sub:'Zero legal risk'          },
-        ].map((s,i)=>(
-          <motion.div key={s.label} {...fromBelow(i*0.08)}
-            style={{padding:'clamp(32px,5vh,52px) clamp(16px,2vw,24px)',textAlign:'center',position:'relative',borderRight:i<3?'1px solid rgba(255,255,255,0.04)':'none'}}>
-
-            {/* top accent line per cell */}
-            <div style={{position:'absolute',top:0,left:'20%',right:'20%',height:'2px',background:i===0?'linear-gradient(to right,transparent,#c9a84c,transparent)':'linear-gradient(to right,transparent,rgba(201,168,76,0.3),transparent)'}}/>
-
-            <p style={{...T.heading,fontSize:'clamp(40px,5vw,64px)',color:T.gold,lineHeight:1,marginBottom:'2px'}}>
-              <Counter to={s.val}/>{s.suffix}
-            </p>
-            <p style={{...T.bold,fontSize:'11px',color:'#ffffff',marginTop:'10px',letterSpacing:'0.1em',textTransform:'uppercase'}}>{s.label}</p>
-            <p style={{...T.body,fontSize:'10.5px',color:'rgba(255,255,255,0.35)',marginTop:'5px',letterSpacing:'0.03em'}}>{s.sub}</p>
-          </motion.div>
-        ))}
-      </div>
-
-      {/* bottom rule */}
-      <div style={{position:'absolute',bottom:0,left:0,right:0,height:'1px',background:'linear-gradient(to right,transparent,rgba(201,168,76,0.5),transparent)',pointerEvents:'none'}}/>
-    </div>
-  )
-}'''
-
-if old_bar in src:
-    src = src.replace(old_bar, new_bar)
-    print("✅ UrgencyBar replaced")
-else:
-    print("⚠️  UrgencyBar not found exactly")
-
-with open('src/pages/Home.jsx', 'w') as f:
-    f.write(src)
-PYEOF
+/* Stat numbers in urgency bar — always win */
+.urgency-bar-wrap [style*="Playfair Display"] {
+  position: relative;
+  z-index: 2;
+}
+EOF
 
 echo ""
-echo "✅ Patches applied. Building..."
-pnpm build && git add . && git commit -m "🏛️ Architectural lead line + hero hierarchy + urgency bar foundation
+echo "✅ All patches applied. Building..."
 
-Hero:
-- Vertical gold lead line (3px, gradient, scaleY animation from top)
-- Label + scarcity pill anchored to the line
-- Site identifier: SARGODHA ROAD · FAISALABAD · EST. 2025
-- Each headline word animates in sequentially (staggered)
-- Gold gradient: #fff5cc → #f5d485 → #c9a84c → #7a4f08 + drop-shadow
-- fontWeight 800 on all headline spans — never loses punch
-- Subline shortened + line-break for rhythm
-- Trust strip: vertical separators between each item
+pnpm build && git add . && git commit -m "✨ Gold hierarchy + glass urgency bar
 
-Urgency Bar:
-- Background #080808 — deeper than pure black, feels grounded
-- Top + bottom gold gradient rules — frames the bar
-- Radial gold glow from top — warmth without noise
-- Per-cell top accent line (first cell full gold, rest subtle)
-- Number size bumped: clamp(40px,5vw,64px)
-- Label tracking 0.1em — more authority
-- maxWidth 1400px — stretches to fill wide screens" \
+Gold balance:
+- Hero scarcity pill: gold → smoke glass (rgba white border + bg)
+- Pill dot: gold → rgba(255,255,255,0.5) — neutral witness
+- Pill label: gold text → rgba(255,255,255,0.6) — steps back
+- Eyebrow label: 0.55 → 0.38 opacity — whisper not shout
+- Trust strip icons: full #c9a84c → 0.55 opacity gold
+- Trust strip text: 0.55 → 0.42 — supporting cast
+- Lead line separators: gold-tinted → pure white rgba
+- Result: gold in the hero belongs ONLY to the headline
+
+Urgency bar glass:
+- backdrop-filter: blur(24px) saturate(1.4) — true glass
+- Background: rgba(6,6,6,0.82) — lets any scroll content bleed through
+- Top border: rgba(201,168,76,0.18) — gold edge catches light
+- Bottom border: rgba white — depth not echo
+- Inner radial glow: 0.04 → 0.07, wider spread
+- Cell alternating micro-tint: even cells +0.5% white
+- Cell dividers: even more receded — 0.03 opacity
+- Stat sublabels: italic — editorial quality
+- CSS ::before layer: top-light to bottom-shadow = 3D lift" \
 && git push origin main
 
 echo ""
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo "✅ Pushed — live in ~60 seconds"
-echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
