@@ -251,7 +251,7 @@ function UrgencyBar() {
             {/* top accent line per cell */}
             <div style={{position:'absolute',top:0,left:'20%',right:'20%',height:'2px',background:i===0?'linear-gradient(to right,transparent,rgba(201,168,76,0.9),transparent)':'linear-gradient(to right,transparent,rgba(201,168,76,0.22),transparent)'}}/>
 
-            <p style={{...T.heading,fontSize:'clamp(40px,5vw,64px)',color:T.gold,lineHeight:1,marginBottom:'2px',fontWeight:800,fontWeight:800}}>
+            <p style={{...T.heading,fontSize:'clamp(40px,5vw,64px)',color:T.gold,lineHeight:1,marginBottom:'2px',fontWeight:800}}>
               <Counter to={s.val}/>{s.suffix}
             </p>
             <p style={{...T.bold,fontSize:'10.5px',color:'rgba(255,255,255,0.85)',marginTop:'10px',letterSpacing:'0.12em',textTransform:'uppercase'}}>{s.label}</p>
